@@ -27,7 +27,7 @@ let html = `
   <title>${entry.name}</title>
 </head>
 <body>
-  <h1>${entry.name}</h1>
+  <h1>${entry.icon}${entry.name}</h1>
 `
 
 for (const page of entry.pages) {
