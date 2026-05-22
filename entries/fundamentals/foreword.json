@@ -1,0 +1,24 @@
+{
+  "name": "Foreword",
+  "icon": "minecraft:book",
+  "category": "lingua_mundi:fundamentals",
+  "priority": true,
+  "sortnum": 0,
+
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This revised edition of Colhams’ great treatise seeks to provide the student of the arcane arts with the necessary understanding to grasp the basics of the Art that is denominated lingua_mundi in the Modern Age. The Editor has taken the liberty to rearrange the content and include additional sections so as to make this work more accessible to the student of general "
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "Magecraft. $(br2)While lingua_mundi may straddle the line between Magery and Artifice, it still promises immense value to the Mage. lingua_mundi is endowed with a functionality much more accessible to the general public. While Magery requires skill on part of the practitioner, the artifacts created by adherents of lingua_mundi are crucial for the dissemination of the Arcane among the general population."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "The Editor thus urges students to strive to acquire at least basic knowledge of the Art treated in this text, in light of its important role in the development of the wider social environment surrounding the Arcane Arts in modern times."
+    }
+  ]
+}
