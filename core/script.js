@@ -98,7 +98,7 @@ for (const file of files) {
   const relative = path.relative(ENTRIES_DIR, file)
   const outputFile = path.join(
     OUTPUT_DIR,
-    relative.replace(".json", ".html")
+    relative.replace(".json", "/index.html")
   )
 
   fs.mkdirSync(path.dirname(outputFile), { recursive: true })
