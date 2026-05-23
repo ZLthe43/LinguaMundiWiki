@@ -26,3 +26,39 @@ p {
   line-height: 1.5;
   margin-bottom: 12px;
 }
+
+.layout {
+  display: flex;
+}
+
+.sidebar {
+  width: 220px;
+  background: #1a1a1a;
+  padding: 10px;
+  overflow-y: auto;
+  transition: width 0.2s ease;
+}
+
+.sidebar.collapsed {
+  width: 50px;
+}
+
+.sidebar .toggle {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.sidebar.collapsed h3,
+.sidebar.collapsed a,
+.sidebar.collapsed #sidebar-sections {
+  display: none;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
