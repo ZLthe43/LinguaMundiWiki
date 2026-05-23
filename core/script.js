@@ -22,7 +22,7 @@ function resolveIcon(icon) {
 
   // custom mod icons
   if (ns === "lingua_mundi") {
-    return `/assets/icons/${name}.png`
+    return `/assets/lingua_mundi/${name}.png`
   }
 
   // vanilla minecraft icons
