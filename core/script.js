@@ -5,7 +5,6 @@ const path = require("path")
 const ENTRIES_DIR = path.join(__dirname, "../entries")
 const OUTPUT_DIR = path.join(__dirname, "../output")
 
-// ---- PATCHOULI FORMATTER ----
 function formatPatchouli(text) {
   if (!text) return ""
 
@@ -16,7 +15,21 @@ function formatPatchouli(text) {
 
   while (i < text.length) {
 
-    // detect $(l)
+    // $(br2)
+    if (text.slice(i, i + 6) === "$(br2)") {
+      out += "<br><br>"
+      i += 6
+      continue
+    }
+
+    // $(br)
+    if (text.slice(i, i + 5) === "$(br)") {
+      out += "<br>"
+      i += 5
+      continue
+    }
+
+    // $(l)
     if (text.slice(i, i + 4) === "$(l)") {
       bold = true
       out += "<strong>"
@@ -24,7 +37,7 @@ function formatPatchouli(text) {
       continue
     }
 
-    // detect $()
+    // $()
     if (text.slice(i, i + 3) === "$()") {
       if (bold) {
         out += "</strong>"
