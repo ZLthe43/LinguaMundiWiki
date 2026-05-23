@@ -1,0 +1,49 @@
+{
+  "name": "On Mana",
+  "icon": "lingua_mundi:mana_decoction_2",
+  "category": "lingua_mundi:fundamentals",
+  "priority": false,
+  "sortnum": 1,
+
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "While lingua_mundiing creates enchantments with stable effects, it is not a field of pure Artifice. Enchantments assembled from glyphs still rely on the practitioner’s accumulated mana. While all living creatures are, to some extent, capable of absorbing mana, the capacity of this reservoir determines the magics that practitioners are able to execute."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "While mana capacity is largely determined at birth, it is known that certain decoctions imbued with pure mana can enhance this capacity, albeit to a limited extent. Furthermore, and for the benefit on non-collegiate students, breaking through the First Threshold does much to increase the capacity of storage and accumulation of practitioners’ reservoirs."
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lingua_mundi:mana_decoction_lesser",
+      "text": "Effective before the First Threshold, expands mana capacity by 5 units."
+    },
+
+    {
+      "type": "lingua_mundi:brewing",
+      "title": "Mana Decoction",
+      "input_id": "minecraft:honey_bottle",
+      "reagent_id": "lingua_mundi:mana_powder",
+      "output_id": "lingua_mundi:mana_decoction_2",
+      "text": "Effective only after the First Threshold, expands mana capacity by 10 units."
+    },
+
+    {
+      "type": "lingua_mundi:brewing",
+      "title": "Greater Mana Decoction",
+      "input_id": "lingua_mundi:mana_decoction_2",
+      "reagent_id": "minecraft:enchanted_golden_apple",
+      "output_id": "lingua_mundi:mana_decoction_3",
+      "text": "Effective only after the First Threshold, expands mana capacity by 20 units."
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lingua_mundi:mana_orb",
+      "text": "Rumoured to grant your greatest wish."
+    }
+  ]
+}

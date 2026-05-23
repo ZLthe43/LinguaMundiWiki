@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>On Spellforms</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <h1>
+    <img class="icon" src="/assets/icons/mana_powder.png">
+    On Spellforms
+  </h1>
+
+  <div class="content">
+    <p>Spellforms refer to the specific particular pertaining to an enchantment. Spellforms are particular in the sense that each spellform possesses its own accidents. The two primary accidents of a spellform are as follows: the capsum, a container of species described in certain texts as the “stack”, and the cursorium, a queue of instructions provenient from the </p>
+<p>enchantment’s Glyphs.<br><br>For further exploration on this topic, please refer to the section $(l:lingua_mundi:computation_concepts)Concepts in Computation$().</p>
+<p>When casting spellforms, it is important to take into account the time needed to cast the spell, as well as the time needed for the casting item to cool down. These two values are subject to the number of glyphs used in the enchantment, and the total complexity of these.<br><br>Note, this does not take into account the complexity and number of the glyphs actually </p>
+<p>executed, rather the total values based on glyphs inscribed on the slate. Even if loops cause hundreds of glyphs to be executed, if only ten glyphs are inscribed on the slate, then only those ten glyphs will be considered.<br><br>Refer to the next page for specific formulae.</p>
+<p>Let base casting time be $(o)Ct$(), base cooldown time be $(o)Cd$(), total complexity be $(o)k$() and glyph count be $(o)n$().<br><br>$(o)Ct$() = 7.5 x ($(o)k$() - 3)^0.7 x $(o)n$()^0.3, where $(o)k$() - 3 is adjusted to always exceed or equal 0<br><br>$(o)Cd$() = 5 x $(o)k$()^0.4 x $(o)n$()^0.6</p>
+  </div>
+
+</body>
+</html>

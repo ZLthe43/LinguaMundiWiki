@@ -1,0 +1,44 @@
+{
+  "name": "On Materials",
+  "icon": "lingua_mundi:mana_stone",
+  "category": "lingua_mundi:fundamentals",
+  "priority": false,
+  "sortnum": 8,
+
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Although Practitioners in lingua_mundi need not be as familiar with the material sciences as some students of other disciplines are, there are some substances with which they are expected to handle proficiently."
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "item": "lingua_mundi:mana_stone",
+      "text": "Mana Stones are the impure form of the Mana Gems found deep underground. They are uncommonly found in the upper strata of the underground."
+    },
+
+    {
+      "type": "patchouli:smelting",
+      "recipe": "lingua_mundi:mana_powder",
+      "text": "These stones can be refined into a powder if heated in a furnace. In this form, the refined stone becomes a powder of fairly pure crystallised mana, useful in a series of applications."
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lingua_mundi:infused_iron_ingot",
+      "recipe2": "lingua_mundi:lingua_mundi_guide"
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lingua_mundi:infused_iron_rod",
+      "text": "Infused Iron has a number of useful properties as a mana-infused metal. Of course, it can also be shaped in a number of ways."
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lingua_mundi:infused_iron_nugget",
+      "recipe2": "lingua_mundi:infused_iron_ingot_from_nugget"
+    }
+  ]
+}

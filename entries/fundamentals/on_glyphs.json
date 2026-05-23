@@ -1,0 +1,20 @@
+{
+  "name": "On Glyphs",
+  "icon": "lingua_mundi:gold_slate",
+  "category": "lingua_mundi:fundamentals",
+  "priority": false,
+  "sortnum": 4,
+
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Glyphs are a representation of the fundamental language of the World. If properly arranged, practitioners may create enchantments to elicit almost any effect imaginable, provided their casting instrument and mana reservoir can handle it. Each glyph can be related to a specific and stable action; thus, glyphs can always be relied upon to act in the same manner."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "Glyphs come in two flavours, computation and effect. Computational Glyphs are glyphs that do not affect the environment, only the capsum and the species within. Meanwhile Effect Glyphs are those that interact with the capsum while also having a real effect in the world. $(br2)Beyond this, glyphs can be sorted into schools, which are as follows: Fire, Ice, Water, Lightning, Conjuration and Computation."
+    }
+
+  ]
+}

@@ -2,8 +2,8 @@ const fs = require("fs")
 const path = require("path")
 
 // ---- CONFIG ----
-const ENTRY_PATH = path.join(__dirname, "../entries/fundamentals/foreword.json")
-const OUTPUT_PATH = path.join(__dirname, "../output/foreword.html")
+const ENTRIES_DIR = path.join(__dirname, "../entries")
+const OUTPUT_DIR = path.join(__dirname, "../output")
 
 // ---- PATCHOULI FORMATTER ----
 function formatPatchouli(text) {
@@ -14,34 +14,97 @@ function formatPatchouli(text) {
     .replace(/\$\(br\)/g, "<br>")
 }
 
-// ---- LOAD ENTRY ----
-const raw = fs.readFileSync(ENTRY_PATH, "utf8")
-const entry = JSON.parse(raw)
+// ---- ICON RESOLVER ----
+function resolveIcon(icon) {
+  if (!icon) return ""
 
-// ---- BUILD HTML ----
-let html = `
+  const [ns, name] = icon.split(":")
+
+  // custom mod icons
+  if (ns === "lingua_mundi") {
+    return `/assets/icons/${name}.png`
+  }
+
+  // vanilla minecraft icons
+  if (ns === "minecraft") {
+    return `https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.1/assets/minecraft/textures/item/${name}.png`
+  }
+
+  return ""
+}
+
+// ---- LOAD ALL JSON FILES RECURSIVELY ----
+function getAllJsonFiles(dir) {
+  let results = []
+
+  const files = fs.readdirSync(dir)
+
+  for (const file of files) {
+    const fullPath = path.join(dir, file)
+    const stat = fs.statSync(fullPath)
+
+    if (stat.isDirectory()) {
+      results = results.concat(getAllJsonFiles(fullPath))
+    } else if (file.endsWith(".json")) {
+      results.push(fullPath)
+    }
+  }
+
+  return results
+}
+
+// ---- RENDER ENTRY ----
+function renderEntry(entry) {
+  return `
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
   <title>${entry.name}</title>
+  <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
-  <h1>${entry.icon}${entry.name}</h1>
-`
+  <h1>
+    <img class="icon" src="${resolveIcon(entry.icon)}">
+    ${entry.name}
+  </h1>
 
-for (const page of entry.pages) {
-  if (page.type === "patchouli:text") {
-    html += `<p>${formatPatchouli(page.text)}</p>\n`
-  }
-}
+  <div class="content">
+    ${entry.pages
+      .map(page => {
+        if (page.type === "patchouli:text") {
+          return `<p>${formatPatchouli(page.text)}</p>`
+        }
+        return ""
+      })
+      .join("\n")}
+  </div>
 
-html += `
 </body>
 </html>
 `
+}
 
-// ---- SAVE OUTPUT ----
-fs.writeFileSync(OUTPUT_PATH, html)
+// ---- MAIN ----
+const files = getAllJsonFiles(ENTRIES_DIR)
 
-console.log("Generated:", OUTPUT_PATH)
+for (const file of files) {
+  const raw = fs.readFileSync(file, "utf8")
+  const entry = JSON.parse(raw)
+
+  const html = renderEntry(entry)
+
+  const relative = path.relative(ENTRIES_DIR, file)
+  const outputFile = path.join(
+    OUTPUT_DIR,
+    relative.replace(".json", ".html")
+  )
+
+  fs.mkdirSync(path.dirname(outputFile), { recursive: true })
+  fs.writeFileSync(outputFile, html)
+
+  console.log("Generated:", outputFile)
+}
+
+console.log("Done.")

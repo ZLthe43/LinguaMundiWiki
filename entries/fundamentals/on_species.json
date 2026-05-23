@@ -1,0 +1,20 @@
+{
+  "name": "On Species",
+  "icon": "minecraft:bucket",
+  "category": "lingua_mundi:fundamentals",
+  "priority": false,
+  "sortnum": 6,
+
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Species is a general term used to describe the references spells keep to different objects. Common species are numbers, vectors, entities, block positions, booleans and lists. $(br2)Other, more specific species include quotations, strings, quaternions, frames, planes and results."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "For more detailed discussion on this topic, refer to the section $(l:lingua_mundi:computation_specifics)Specifics in Computation$()."
+    }
+
+  ]
+}

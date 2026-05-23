@@ -1,0 +1,19 @@
+{
+  "name": "On Casting Items",
+  "icon": "lingua_mundi:stavecrafter",
+  "category": "lingua_mundi:fundamentals",
+  "priority": false,
+  "sortnum": 2,
+
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "lingua_mundied enchantments must be applied to specialised items in order to function. It thus becomes clear that the item, with its inscribed enchantment, is the element that gives form to the practitioners’ mana. Unlike Magecraft, which requires Mages to shape their mana themselves, lingua_mundi accommodates practitioners inexperienced in the shaping of mana."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "Of course, this is all dependent on the correct arrangement of the enchantment’s Glyphs, as well as the specific arcane qualities of the casting item. Hence, it becomes important to consider the materials and components of casting items, which provide their properties and limitations. $(br2)For further exploration on this topic, please refer to the section $(l:lingua_mundi:casting_items)On Casting Items$()."
+    }
+  ]
+}
