@@ -9,10 +9,41 @@ const OUTPUT_DIR = path.join(__dirname, "../output")
 function formatPatchouli(text) {
   if (!text) return ""
 
-  return text
-    .replace(/\$\(br2\)/g, "<br><br>")
-    .replace(/\$\(br\)/g, "<br>")
+  let out = ""
+  let i = 0
+
+  let bold = false
+
+  while (i < text.length) {
+
+    // detect $(l)
+    if (text.slice(i, i + 4) === "$(l)") {
+      bold = true
+      out += "<strong>"
+      i += 4
+      continue
+    }
+
+    // detect $()
+    if (text.slice(i, i + 3) === "$()") {
+      if (bold) {
+        out += "</strong>"
+        bold = false
+      } else {
+        out += ":"
+      }
+      i += 3
+      continue
+    }
+
+    // normal character
+    out += text[i]
+    i++
+  }
+
+  return out
 }
+
 
 // ---- ICON RESOLVER ----
 function resolveIcon(icon) {
