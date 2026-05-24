@@ -113,6 +113,7 @@ function renderEntry(entry) {
 
 <div class="layout">
 
+  <!-- SIDEBAR -->
   <div class="sidebar" id="sidebar">
     <button class="toggle" onclick="toggleSidebar()">☰</button>
 
@@ -120,12 +121,14 @@ function renderEntry(entry) {
     <div id="sidebar-sections"></div>
   </div>
 
+  <!-- MAIN CONTENT -->
   <div class="content">
+
     <h1>
       <img class="icon" src="${resolveIcon(entry.icon)}">
       ${entry.name}
     </h1>
-    
+
     ${entry.pages
       .map(page => {
         if (page.type === "patchouli:text") {
@@ -134,9 +137,12 @@ function renderEntry(entry) {
         return ""
       })
       .join("\n")}
-  </div> <!-- content -->
-</div> <!-- layout -->
 
+  </div>
+
+</div>
+
+<!-- TOGGLE SCRIPT -->
 <script>
 function toggleSidebar() {
   document.getElementById("sidebar").classList.toggle("collapsed")
