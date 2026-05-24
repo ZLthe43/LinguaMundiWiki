@@ -1,0 +1,86 @@
+{
+  "name": "Water Magic",
+  "icon": "minecraft:water_bucket",
+  "category": "lingua_mundi:effect_specifics",
+  "priority": false,
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Water is a complex element, focussing on the conjuration and careful, precise control of matter. Indeed, water is a malleable substance with many properties. Practitioners often find water to be the element best suited for creating complex spells, patterns and constructs, but of course, this requires a hefty amount of computation."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.water_needle",
+      "glyph": "lingua_mundi:water_needle",
+      "text": "$(n)vec, vec, num$() →$(br)Pops a number for power, followed by a vector for direction and a vector for origin. Shoots a projectile at power-value blocks per tick. Deals damage equal to the product of 1.75 times speed, with a cap of 40 damage.$(br2)Mana cost: 5 + pow^1.6"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.water_slash",
+      "glyph": "lingua_mundi:water_slash",
+      "text": "$(n)vec, vec, num$() →$(br)Pops a number for power, followed by a vector for direction and a vector for origin. Shoots a wide, short-lived water construct that slices through any target in its path, dealing damage equal to its power, capped at 20.$(br2)Mana cost: 10 + 1.4 * pow^1.6"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.gills",
+      "glyph": "lingua_mundi:gills",
+      "text": "$(n)entity, num$() →$(br)Pops a number representing power and a target which must be a LivingEntity. Applies Water Breathing to the target entity, with each power level adding 10 seconds of the effect to the target.$(br2)Mana cost: 30 * pow"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.fins",
+      "glyph": "lingua_mundi:fins",
+      "text": "$(n)entity, num$() →$(br)Pops a number representing power and a target which must be a LivingEntity. Applies Dolphin’s Grace to the target entity, with each power level adding 10 seconds of the effect to the target.$(br2)Mana cost: 20 * pow"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.create_water",
+      "glyph": "lingua_mundi:create_water",
+      "text": "$(n)position$() →$(br)Pops a block position at the head of the capsum and conjures a water source at the given position.$(br2)Mana cost: 10"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.summon_rain",
+      "glyph": "lingua_mundi:summon_rain",
+      "text": "→$(br)Summons rain the instant it is cast.$(br2)Mana cost: 80"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.clear_weather",
+      "glyph": "lingua_mundi:clear_weather",
+      "text": "→$(br)Clears rain the instant it is cast.$(br2)Mana cost: 80"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.extinguish",
+      "glyph": "lingua_mundi:extinguish",
+      "text": "$(n)vec, num$() →$(br)Pops a number representing power, and a vector representing position. Extinguishes all fire, from open flames to campfires, and heals all entities within a range through the restorative essence of water."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Radius = 2 + 0.3 * pow, capped at 5 blocks.$(li)Healing = pow, capped at 15 health.$(br2)Mana cost: 15 + 2.5 * pow^1.7"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.water_ball",
+      "glyph": "lingua_mundi:water_ball",
+      "text": "$(n)vec, vec, num, quote$() → $(n)result$()$(br)Pops a number describing power, followed by a vector describing direction and a vector describing origin. Shoots a projectile that deals damage equivalent to the given power value, with a cap of 20 damage."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "The water ball also pushes an entity species representing itself, allowing casters to fully control its trajectory, and use the species to anchor other effects.$(br2)The projectile calls the given quote upon impact, ending the spell once this quote is run, regardless of any instructions remaining on the cursorium.$(br2)Mana cost: 20 + 1.5 * pow^1.5"
+    }
+  ]
+}

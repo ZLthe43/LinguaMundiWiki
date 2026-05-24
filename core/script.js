@@ -1,6 +1,37 @@
 const fs = require("fs")
 const path = require("path")
 
+// ---- FILES ----
+// for later usage
+const files = getAllJsonFiles(ENTRIES_DIR)
+
+for (const file of files) {
+  const raw = fs.readFileSync(file, "utf8")
+  const entry = JSON.parse(raw)
+
+  const relative = path.relative(ENTRIES_DIR, file)
+
+  // store metadata for navigation
+  ENTRIES.push({
+    name: entry.name,
+    category: entry.category,
+    file: relative,
+    url: "/" + relative.replace(".json", ".html").replace(/\\/g, "/")
+  })
+
+  const html = renderEntry(entry, ENTRIES)
+
+  const outputFile = path.join(
+    OUTPUT_DIR,
+    relative.replace(".json", ".html")
+  )
+
+  fs.mkdirSync(path.dirname(outputFile), { recursive: true })
+  fs.writeFileSync(outputFile, html)
+
+  console.log("Generated:", outputFile)
+}
+
 // ---- CONFIG ----
 const ENTRIES_DIR = path.join(__dirname, "../entries")
 const OUTPUT_DIR = path.join(__dirname, "../output")
@@ -99,7 +130,8 @@ function getAllJsonFiles(dir) {
 }
 
 // ---- RENDER ENTRY ----
-function renderEntry(entry) {
+function renderEntry(entry, entries) {
+  const sidebarHTML = buildSidebar(entries)
   return `
 <!DOCTYPE html>
 <html>
@@ -118,7 +150,9 @@ function renderEntry(entry) {
     <button class="toggle" onclick="toggleSidebar()">☰</button>
 
     <h3>Index</h3>
-    <div id="sidebar-sections"></div>
+    <div id="sidebar-sections">
+      ${sidebarHTML}
+    </div>
   </div>
 
   <!-- MAIN CONTENT -->
@@ -154,6 +188,58 @@ function toggleSidebar() {
 `
 }
 
+// ---- RENDER SIDEBAR ----
+function buildSidebar(entries) {
+  const grouped = {}
+
+  for (const e of entries) {
+    if (!grouped[e.category]) grouped[e.category] = []
+    grouped[e.category].push(e)
+  }
+
+  let html = ""
+
+  for (const cat in grouped) {
+    html += `<h4>${cat}</h4>`
+
+    for (const e of grouped[cat]) {
+      html += `<a href="${e.url}">${e.name}</a>`
+    }
+  }
+
+  return html
+}
+
+// ---- INDEX ----
+function generateIndex(entries) {
+  let html = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Wiki Index</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<h1>Wiki Index</h1>
+<ul>
+`
+
+  for (const e of entries) {
+    html += `<li><a href="${e.url}">${e.name}</a> — ${e.category}</li>`
+  }
+
+  html += `
+</ul>
+
+</body>
+</html>
+`
+
+  return html
+}
+
 // ---- MAIN ----
 const files = getAllJsonFiles(ENTRIES_DIR)
 
@@ -176,3 +262,12 @@ for (const file of files) {
 }
 
 console.log("Done.")
+
+const indexHTML = generateIndex(ENTRIES)
+
+fs.writeFileSync(
+  path.join(OUTPUT_DIR, "index.html"),
+  indexHTML
+)
+
+console.log("Generated index.html")

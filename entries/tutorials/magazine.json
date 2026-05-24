@@ -1,0 +1,31 @@
+{
+  "name": "Using the Magazine",
+  "icon": "minecraft:lightning_rod",
+  "category": "lingua_mundi:tutorials",
+  "priority": false,
+  "sortnum": 5,
+
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This tutorial shows how a practitioner may use a spell that returns a number of hit results to cast an effect on multiple targets. This means casters are able to take advantage of spells that can hit multiple enemies, pushing a hit result for each hit onto the magazine.$(br2)The following spell will cast a lightning probe, which queues"
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "a hit result onto the magazine for every entity that touches it. It will then wait 2.5 seconds before casting a lightning bolt on the entities corresponding to the first two hit results on the magazine."
+    },
+
+    {
+      "type": "lingua_mundi:tutorial_showcase",
+      "title": "Lightning Bolt Slate",
+      "image": "lingua_mundi:textures/gui/textbook/magazine_tutorial.png",
+      "text": "This spell casts a lightning probe, waits, and strikes 2 entities on the magazine with lightning bolts."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "1) Sets up the cast for a lightning probe.$(br2)2) Casts the lightning probe and waits 2.5 seconds.$(br2)3) Polls from the magazine, retrieves the entity species from the result and casts a lightning bolt onto the entity.$(br2)4) Polls from the magazine again, retrieves another entity species and casts a lightning bolt onto this second entity."
+    }
+  ]
+}

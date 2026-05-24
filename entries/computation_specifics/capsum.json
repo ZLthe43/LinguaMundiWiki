@@ -1,0 +1,153 @@
+{
+  "name": "Capsum",
+  "icon": "minecraft:chest",
+  "category": "lingua_mundi:computation_specifics",
+  "priority": false,
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "These glyphs manipulate the capsum itself. More often than not, they do not modify species at all, just rearranging them on the stack. In many instances, these glyphs act on generic species, in these cases these species will be denoted with an uppercase letter of the Latin alphabet."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.swap",
+      "glyph": "lingua_mundi:swap",
+      "text": "$(n)B, A$() → $(n)A, B$()$(br)Swaps the species at the head with the species below it."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.swap_ends",
+      "glyph": "lingua_mundi:swap_ends",
+      "text": "$(n)D, …, A$() → $(n)A, …, D$()$(br)Swaps the ends of the capsum, with the head going to the end, and vice versa."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.dup",
+      "glyph": "lingua_mundi:dup",
+      "text": "$(n)B, A$() → $(n)B, A, A$()$(br)Duplicates the species at the head of the capsum."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.drop",
+      "glyph": "lingua_mundi:drop",
+      "text": "$(n)B, A$() → $(n)B$()$(br)Removes the head of the capsum and does not return anything at all."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.tuck",
+      "glyph": "lingua_mundi:tuck",
+      "text": "$(n)B, A$() → $(n)A, B, A$()$(br)Takes the species at the head of the capsum, and duplicates it, placing it below the species below the head in the pattern shown above."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.over",
+      "glyph": "lingua_mundi:over",
+      "text": "$(n)B, A$() → $(n)B, A, B$()$(br)Duplicates the species below the head onto the head, preserving the original two species."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.nip",
+      "glyph": "lingua_mundi:nip",
+      "text": "$(n)B, A$() → $(n)A$()$(br)Pops the species below the head, returning nothing."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.fish",
+      "glyph": "lingua_mundi:fish",
+      "text": "$(n)number$() → $(n)A$()$(br)Pops the species at the place, counting down from the head, corresponding to the number popped by the glyph$(br2)eg. 2 → species at the 2nd place, the one just below the head."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.peek_fish",
+      "glyph": "lingua_mundi:peek_fish",
+      "text": "$(n)number$() → $(n)A$()$(br)Similar to Fish, except the selected species is not popped, but just cloned, with the clone being placed onto the head instead."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.drop_at",
+      "glyph": "lingua_mundi:drop_at",
+      "text": "$(n)number$() → $(br)Pops the object at the place, counting down from the head corresponding to the number popped by the glyph.$(br2)eg. 2 → ; would pop the species at the 2nd place (just below the head), returning nothing."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.push_to",
+      "glyph": "lingua_mundi:push_to",
+      "text": "$(n)A, number$() →$(br)Pops species A and places it in the place, counting from the head, corresponding to the number popped by the glyph.$(br2)Eg. $(n)C, B, A, 2$() → $(n)C, A, B$() (A is now at the 2nd place)"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.dup_to",
+      "glyph": "lingua_mundi:dup_to",
+      "text": "$(n)A, number$() →$(br)Pops species A and places it in the place, counting from the head, corresponding to the number popped by the glyph. It then restores A at the head, preventing consumption.$(br2)eg. $(n)C, B, A, 2$() → $(n)C, A, B, A$() (A is now at the 2nd place without counting the head)"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.swap2",
+      "glyph": "lingua_mundi:swap2",
+      "text": "$(n)D, C, B, A$() → $(n)B, A, D C$()$(br)Swaps the top two pairs of species with each other. Preserves order within the pairs."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.dup2",
+      "glyph": "lingua_mundi:dup2",
+      "text": "$(n)B, A$() → $(n)B, A, B, A$()$(br)Duplicates the top two species, preserving the order within the pair."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.drop2",
+      "glyph": "lingua_mundi:drop2",
+      "text": "$(n)B, A$() → $(br)Pops the top two species, returning nothing."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.clock_rot",
+      "glyph": "lingua_mundi:clock_rot",
+      "text": "$(n)C, B, A$() → $(n)B, A, C$()$(br)Pops the third species and pushes it to the head, preserving the order of the head and the subsequent species. In short: the third species goes to the head."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.counter_rot",
+      "glyph": "lingua_mundi:counter_rot",
+      "text": "$(n)C, B, A$() → $(n)A, C, B$()$(br)Pops the head and pushes it onto the third place, preserving the order of the (originally) second and third species. In short: the head goes to the third place."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.mass_dup",
+      "glyph": "lingua_mundi:mass_dup",
+      "text": "$(n)A, number$() → $(n)A, A, …$()$(br)Duplicates the species below the head so its quantity matches the popped number$(br2)eg. $(n)A, 3$() → $(n)A, A, A$()"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.stack_size",
+      "glyph": "lingua_mundi:stack_size",
+      "text": "→ $(n)number$()$(br)Pushes onto the capsum a number corresponding to the number of elements held within."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.print",
+      "glyph": "lingua_mundi:print",
+      "text": "$(n)A$() →$(br)Prints the head of the capsum onto a text message viewable only by the caster."
+    }
+  ]
+}

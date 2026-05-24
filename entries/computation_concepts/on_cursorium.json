@@ -1,0 +1,19 @@
+{
+  "name": "On The Cursorium",
+  "icon": "lingua_mundi:iron_emerald",
+  "category": "lingua_mundi:computation_concepts",
+  "priority": false,
+  "sortnum": 0,
+
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The cursorium is a list of instructions held by each spellform, aggregated from a slate’s inscribed glyphs. These instructions are executed according to the order of aggregation, that is, starting from the top-left and moving rightward, wrapping downwards at the end of each line.$(br2)These instructions run instantaneously, unless a delay "
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "glyph is used. The cursorium can also be added to through operations involving quotations.$(br2)For further detail please refer to the entry $(l:lingua_mundi:computation_specifics/quotations)On Quotations$(), in the section $(l:lingua_mundi:computation_specifics)Specifics of Computation$()."
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "name": "Ice Magic",
+  "icon": "minecraft:snowball",
+  "category": "lingua_mundi:effect_specifics",
+  "priority": false,
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Ice is the second most common element among apprentice practitioners. The Ice School of magic focuses on precise use of conjured matter. The simplicity of controlling ice is precisely what makes it a school adequate for beginners, yet able to produce deadly effects on the battlefield."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.icicle",
+      "glyph": "lingua_mundi:icicle",
+      "text": "$(n)vec, vec, num$() → $(n)result$()$(br)Pops a number for power, followed by a vector for direction and a vector for origin. Shoots a projectile that freezes a target and deals damage equal to the given power value, with a cap of 10 damage.$(br2)Mana cost: 10 + 1.4 * pow^1.4"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.ice_shard",
+      "glyph": "lingua_mundi:ice_shard",
+      "text": "$(n)vec, vec, num$() →$(br)Pops a number for power, followed by a vector for direction and a vector for origin. Shoots a short-lived projectile at power-value blocks per tick. Deals damage equal to double its speed as it impacts a target.$(br2)Mana cost: 5 + pow^1.6"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.create_ice",
+      "glyph": "lingua_mundi:create_ice",
+      "text": "$(n)position$() →$(br)Pops a block position at the head of the capsum and conjures a block of ice at the given position.$(br2)Mana cost: 10"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.ice_field",
+      "glyph": "lingua_mundi:ice_field",
+      "text": "$(n)vec, num$() →$(br)Pops a number representing power, and a vector representing position. Produces an icy field that lingers for several seconds, damaging any entities that fall within."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Lifetime = 15 + 3 * pow, capped at 35 seconds.$(li)Radius = 2 + 0.3 * pow, capped at 8 blocks.$(li)Damage = 0.5 * pow, capped at 5 damage, twice per second.$(br2)Mana cost: 20 + 1.3 * pow^1.5"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.ice_lance",
+      "glyph": "lingua_mundi:ice_lance",
+      "text": "$(n)vec, vec, num$() → $(n)result$()$(br)Pops a number describing power, followed by a vector describing direction and a vector describing origin. Shoots a projectile that freezes and deals damage equivalent to the given power value, with a cap of 30 damage."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "The shard is able to penetrate through a number of entities equal to the power / 3, rounded down, where each hit produces a unique ray result.$(br2)Mana cost: 25 + 1.7 * pow^1.5"
+    }
+  ]
+}

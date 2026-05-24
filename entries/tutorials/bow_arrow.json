@@ -1,0 +1,43 @@
+{
+  "name": "Offset Casting",
+  "icon": "minecraft:spectral_arrow",
+  "category": "lingua_mundi:tutorials",
+  "priority": false,
+  "sortnum": 4,
+
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This tutorial demonstrates how several spell glyphs can be used to set up a cast for a projectile that is not centred on the caster. This effectively allows casters to offset their spells, casting projectiles from any position they desire.$(br2)The following spell will cast two force probes, with a 1-second delay between casts. The results from both probes"
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "will then be used to cast a firebolt that travels from the endpoint of the first probe towards the endpoint of the second probe."
+    },
+
+    {
+      "type": "lingua_mundi:tutorial_showcase",
+      "title": "I: Bow & Arrow Firebolt",
+      "image": "lingua_mundi:textures/gui/textbook/bow_arrow_tutorial_1.png",
+      "text": "Casts a force probe, waits 1 second, and then sets up the cast for a second force probe."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "1) Sets up the cast for a force probe from the caster’s eye along their look vector.$(br2)2) Casts the force probe and saves the vector position of its endpoint.$(br2)3) Waits 1 second.$(br2)4) Sets up the cast for a second force probe from the caster’s eye along their look vector."
+    },
+
+    {
+      "type": "lingua_mundi:tutorial_showcase",
+      "title": "II: Bow & Arrow Firebolt",
+      "image": "lingua_mundi:textures/gui/textbook/bow_arrow_tutorial_2.png",
+      "text": "Casts a second probe, and then casts a firebolt from the first endpoint to the second endpoint, along the direction from the first endpoint to the second endpoint, achieved through subtraction."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "5) Casts a second probe and saves the vector position of its endpoint.$(br2)6) Swaps, and duplicates the vector for the first endpoint. Then rotates the capsum so the vector for the second endpoint ends up below the head.$(br2)7) Subtracts the first endpoint from the second endpoint.$(br2)8) Pushes an integer and completes the firebolt cast."
+    }
+  ]
+}

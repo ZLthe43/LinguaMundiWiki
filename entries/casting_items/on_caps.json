@@ -1,0 +1,56 @@
+{
+  "name": "On Caps",
+  "icon": "minecraft:gold_ingot",
+  "category": "lingua_mundi:casting_items",
+  "priority": false,
+  "sortnum": 2,
+
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Caps are a reinforcement element in staves. Their role is to both provide structural stability and contribute to the improvement of the staff’s internal mana flow. The following pages will discuss the different properties of materials, and their effect on the final product."
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:copper_ingot",
+      "text": "High conductivity improves mana flow at the cost of little added strength.$(br2)+96 Durability, -10%% Cooldown Time."
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:gold_ingot",
+      "text": "Extremely conductive, but negligible added strength.$(br2)+64 Durability, -15%% Cooldown Time."
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:iron_ingot",
+      "text": "No effect on mana flow, but does significantly improve structural integrity.$(br2)+160 Durability."
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:netherite_ingot",
+      "text": "Somewhat conductive due to its unique composition. Remarkably durable.$(br2)+256 Durability, -5%% Cooldown Time."
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "item": "lingua_mundi:infused_iron_ingot",
+      "text": "Highly conductive, enhanced durability over standard iron.$(br2)+256 Durability, -15%% Cooldown Time."
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:quartz",
+      "text": "Conductive, presents a stable internal mana flow. Somewhat brittle.$(br2)+96 Durability, -10%% Cooldown Time."
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:prismarine_shard",
+      "text": "Somewhat conductive. Moderately durable.$(br2)+128 Durability, -5%% Cooldown Time."
+    }
+  ]
+}

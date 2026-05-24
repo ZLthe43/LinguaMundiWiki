@@ -1,0 +1,48 @@
+{
+  "name": "Tagging",
+  "icon": "minecraft:name_tag",
+  "category": "lingua_mundi:computation_specifics",
+  "priority": false,
+  "sortnum": 12,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This section deals with the tag and magazine structures. The tag is a structure that can store exactly one species, and can be read or written to at any time. The magazine is a queue that serves as a buffer for results. It only activates if a spell receives multiple results from effect glyphs (not relevant for simple spells)."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.write_tag",
+      "glyph": "lingua_mundi:write_tag",
+      "text": "$(n)A$() →$(br)Pops a species and passes it into the tag. It will remain in the tag until either the tag is written to again or the spell ends."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.read_tag",
+      "glyph": "lingua_mundi:read_tag",
+      "text": "→ $(n)A$()$(br)Reads the tag and pushes a copy of the contained species. The original species remains in the tag."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.poll_magazine",
+      "glyph": "lingua_mundi:poll_magazine",
+      "text": "→ $(n)result$()$(br)The magazine, as a queue, releases the results in the order they were received. This glyph removes the oldest result from the magazine and pushes it into the capsum."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.magazine_list",
+      "glyph": "lingua_mundi:magazine_list",
+      "text": "→ $(n)list$()$(br)Takes all items in the magazine, and adds them to a list from oldest to newest. The list is then pushed onto the capsum."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.magazine_size",
+      "glyph": "lingua_mundi:magazine_size",
+      "text": "→ $(n)number$()$(br)Pushes onto the capsum a number corresponding to the number of elements held in the magazine."
+    }
+  ]
+}

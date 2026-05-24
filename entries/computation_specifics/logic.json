@@ -1,0 +1,83 @@
+{
+  "name": "Logic",
+  "icon": "minecraft:redstone_torch",
+  "category": "lingua_mundi:computation_specifics",
+  "priority": false,
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "These glyphs are involved in manipulating boolean species, species that represent either true or false. Numerically, true and false can be expressed as 1 or 0. These species are important as they are used to gate functionality by condition; for further details see the section on $(l:lingua_mundi:computation_specifics/quotations)Quotations$()."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.to_boolean",
+      "glyph": "lingua_mundi:to_boolean",
+      "text": "$(n)any$() → $(n)boolean$()$(br)Converts a species into the corresponding boolean. If fed a boolean, returns the boolean. Returns false if fed null, a number with value 0, or an empty list. For everything else, the glyph returns true."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.bool_to_num",
+      "glyph": "lingua_mundi:bool_to_num",
+      "text": "$(n)boolean$() → $(n)number$()$(br)Returns either 0 or 1 depending on the value of the boolean at the head of the capsum."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.not",
+      "glyph": "lingua_mundi:not",
+      "text": "$(n)boolean$() → $(n)boolean$()$(br)Takes a boolean and returns the opposite value.$(br)eg. False → True, or True → False"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.and",
+      "glyph": "lingua_mundi:and",
+      "text": "$(n)bool, bool$() → $(n)bool$()$(br)Pops two booleans, returns true only if both of the inputs have value true."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.or",
+      "glyph": "lingua_mundi:or",
+      "text": "$(n)bool, bool$() → $(n)bool$()$(br)Pops two booleans, returns true if at least one of the inputs has value true."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.xor",
+      "glyph": "lingua_mundi:xor",
+      "text": "$(n)bool, bool$() → $(n)bool$()$(br)Pops two booleans, returns true only if exactly one input is true, while the other is false."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.equal",
+      "glyph": "lingua_mundi:equal",
+      "text": "$(n)A, B$() → $(n)bool$()$(br)Pops two species, returns true if they are equal, otherwise returns false."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.compare_eq",
+      "glyph": "lingua_mundi:compare_eq",
+      "text": "$(n)num, num$() → $(n)bool$()$(br)Returns true if the number below the head is smaller than or equal to the number at the head."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.compare",
+      "glyph": "lingua_mundi:compare",
+      "text": "$(n)num, num$() → $(n)bool$()$(br)Returns true if the number below the head is strictly smaller than the number at the head."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.in_block",
+      "glyph": "lingua_mundi:in_block",
+      "text": "$(n)vector$() → $(n)boolean$()$(br)Checks the vector position fed into the glyph. Returns true if the corresponding position is inside a block (solid), otherwise returns false."
+    }
+  ]
+}

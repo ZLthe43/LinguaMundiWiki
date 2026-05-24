@@ -1,0 +1,113 @@
+{
+  "name": "Organic Magic",
+  "icon": "minecraft:fermented_spider_eye",
+  "category": "lingua_mundi:effect_specifics",
+  "priority": false,
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Organic magic is largely focussed on physical enhancement and weakening, and dominion over plants. The magic functions similarly to traditional potions, but offers additional flexibility, power and, in some cases, functionality. All spells that apply an effect can extend the effect if it is already present."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.strength",
+      "glyph": "lingua_mundi:strength",
+      "text": "$(n)entity, num, num$() →$(br)Pops a number for effect level, a number for time, and a target entity. Applies Strength on the target entity at the given level, for seconds equal to 10 times the given time value.$(br2)Mana cost: level^2 * time * 35"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.swiftness",
+      "glyph": "lingua_mundi:swiftness",
+      "text": "$(n)entity, num, num$() →$(br)Pops a number for effect level, a number for time, and a target entity. Applies Swiftness on the target entity at the given level, for seconds equal to 10 times the given time value.$(br2)Mana cost: level^2 * time * 35"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.leaping",
+      "glyph": "lingua_mundi:leaping",
+      "text": "$(n)entity, num, num$() →$(br)Pops a number for effect level, a number for time, and a target entity. Applies Leaping on the target entity at the given level, for seconds equal to 10 times the given time value.$(br2)Mana cost: level^2 * time * 30"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.night_vision",
+      "glyph": "lingua_mundi:night_vision",
+      "text": "$(n)entity, num$() →$(br)Pops a number for time and an entity species for the target. Applies Night Vision on the target entity at the given level, for seconds equal to 10 times the given time value.$(br2)Mana cost: time * 15"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.regeneration",
+      "glyph": "lingua_mundi:regeneration",
+      "text": "$(n)entity, num, num$() →$(br)Pops a number for effect level, a number for time, and a target entity. Applies Regeneration on the target entity at the given level, for seconds equal to 10 times the given time value.$(br2)Mana cost: level^2 * time * 35"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.resistance",
+      "glyph": "lingua_mundi:resistance",
+      "text": "$(n)entity, num, num$() →$(br)Pops a number for effect level, a number for time, and a target entity. Applies Resistance on the target entity at the given level, for seconds equal to 10 times the given time value.$(br2)Mana cost: level^2 * time * 40"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.slowness",
+      "glyph": "lingua_mundi:slowness",
+      "text": "$(n)entity, num, num$() →$(br)Pops a number for effect level, a number for time, and a target entity. Applies Slowness on the target entity at the given level, for seconds equal to 10 times the given time value.$(br2)Mana cost: level^2 * time * 30"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.weakness",
+      "glyph": "lingua_mundi:weakness",
+      "text": "$(n)entity, num, num$() →$(br)Pops a number for effect level, a number for time, and a target entity. Applies Weakness on the target entity at the given level, for seconds equal to 10 times the given time value.$(br2)Mana cost: level^2 * time * 30"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.poison",
+      "glyph": "lingua_mundi:poison",
+      "text": "$(n)entity, num, num$() →$(br)Pops a number for effect level, a number for time, and a target entity. Applies Poison on the target entity at the given level, for seconds equal to 10 times the given time value.$(br2)Mana cost: level^2 * time * 40"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.wither",
+      "glyph": "lingua_mundi:wither",
+      "text": "$(n)entity, num, num$() →$(br)Pops a number for effect level, a number for time, and a target entity. Applies Wither on the target entity at the given level, for seconds equal to 10 times the given time value.$(br2)Mana cost: level^2 * time * 50"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.grow_wings",
+      "glyph": "lingua_mundi:grow_wings",
+      "text": "$(n)entity, num$() →$(br)Pops a number for time, and an entity species for the target. Causes the target to grow fleshy wings that function similarly to an elytra, for seconds equal to 10 times the given time value.$(br2)Mana cost: time * 25"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.grow_plant",
+      "glyph": "lingua_mundi:grow_plant",
+      "text": "$(n)position$() →$(br)Pops a block position, and applies a fertilising magic similar to bonemeal at that position.$(br2)Mana cost: 10"
+    },
+
+    {
+      "type": "patchouli:empty"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.sludgeball",
+      "glyph": "lingua_mundi:sludgeball",
+      "text": "$(n)vec, vec, num$() → $(n)result$()$(br)Pops a number for power, a vector for direction and a vector for origin. Conjures and shoots a ball of toxic sludge that damages a target for damage equal to power, capped at 15, and applies the sludge effect, reducing armour effectiveness."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Ticks = 200 + 25 * pow$(li)Effect level = (pow / 3) - 1, capped at 4$(br2)Mana cost: 15 + 1.6 * pow^1.4"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "name": "On Gem Upgrades",
+  "icon": "lingua_mundi:mana_augmenter",
+  "category": "lingua_mundi:casting_items",
+  "priority": false,
+  "sortnum": 4,
+
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Gem upgrades are incredibly important in the creation of casting items, as they are able to amplify the properties of gems. This next section will discuss different gem upgrades and their effects on the gems they are applied to."
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lingua_mundi:reactive_coil",
+      "text": "A copper channel designed to hasten the flowrate of mana through redstone built into its structure.$(br2)+10%% Spell Power."
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lingua_mundi:mana_augmenter",
+      "text": "Holds a canister filled with a mix of redstone and mana powder, further empowering mana that flows through it.$(br2)+20%% Spell Power."
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lingua_mundi:mana_router",
+      "text": "A redstone-infused gem that serves as an auxiliary processor. Both empowers mana and reroute it so as to accommodate even higher potencies.$(br2)+30%% Spell Power."
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lingua_mundi:quartz_stabiliser",
+      "text": "A crude device designed to regulate mana flow relying on the stabilising properties of nether quartz.$(br2)-5%% Mana Cost."
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lingua_mundi:charm_stabiliser",
+      "text": "A more robust variant of the Quartz Stabiliser. Better able to regulate mana, at the cost of potency.$(br2)-10%% Mana Cost, -5%% Spell Power."
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lingua_mundi:medallion_stabiliser",
+      "text": "Uses mana powder circuitry to regulate mana without further jeopardising potency.$(br2)-15%% Mana Cost, -5%% Spell Power."
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lingua_mundi:mana_conduit",
+      "text": "By storing residual energy in a dissipation coil, casting items are able to clear faster for a new cast.$(br2)-10%% Cooldown Time."
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lingua_mundi:mana_radiator",
+      "text": "By switching copper for infused iron, the Radiator can absorb even more excess mana.$(br2)-15%% Cooldown Time."
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lingua_mundi:mana_dissipator",
+      "text": "A gold rod is better able to conduct mana towards the coil, a development made possible by incorporating mana powder directly into the coil itself.$(br2)-20%% Cooldown Time."
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lingua_mundi:lapis_stabiliser",
+      "text": "Channels mana through a core of lapis, reorganising the mana flow in a way less taxing on the casting item.$(br2)+30 Max Mana."
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lingua_mundi:lapis_core",
+      "text": "Relies on contacts fashioned from infused iron, improving the component’s capacity to reorganise mana.$(br2)+60 Max Mana."
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lingua_mundi:lapis_processor",
+      "text": "Relies on a far denser mass of lapis along with improved contacts in order to achieve an improved flow of mana.$(br2)+80 Max Mana, +10%% Cooldown Time."
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lingua_mundi:iron_emerald",
+      "text": "Uses the unique quality of emerald to manage minute quantities of mana to create an auxiliary computation core.$(br2)+5 Computation."
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lingua_mundi:blackstone_emerald",
+      "text": "An emerald encased in blackstone, with contacts of infused iron, is much more adept at shouldering some of the computational load of executing a spellform.$(br2)+10 Computation."
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lingua_mundi:gilded_emerald",
+      "text": "The Logic Processor is much improved in its ability to handle computations thanks to its improved base disc and circuitry.$(br2)+40 Computation, +5%% Cooldown Time."
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lingua_mundi:auxiliary_core",
+      "text": "Polished diamond, enhanced with mana powder. Designed to execute minor tweaks to mana flow so as to consolidate mana aligned with different schools.$(br2)+1 Max Schools."
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "title": "Emblems",
+      "item": "tag:lingua_mundi:emblems",
+      "text": "Ancient emblems found in shipwrecks, outposts, fortresses, strongholds and other structures. Current understanding dictates that these are a material representation of the forces of this world.$(br2)Enable buffs for glyphs of the specified school."
+    }
+  ]
+}

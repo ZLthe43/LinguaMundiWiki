@@ -1,0 +1,64 @@
+{
+  "name": "On Rods",
+  "icon": "minecraft:stripped_oak_log",
+  "category": "lingua_mundi:casting_items",
+  "priority": false,
+  "sortnum": 1,
+
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Rods are the main body of a staff. They play an important role in managing the flow of mana, while also providing structural strength and ergonomics to ease the casting process. The following pages will discuss the different properties of materials, and their effect on the final product."
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:forge:stripped_logs",
+      "title": "Stripped Logs",
+      "text": "Lightweight and sturdy, offer good ergonomics but little in the way of the management of mana.$(br2)+576 Durability, -15%% Casting Time."
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:forge:stripped_stems",
+      "title": "Stripped Stems",
+      "text": "Similar to wood, although heavier and slightly more compatible with magic.$(br2)+576 Durability, -5%% Casting Time, +5%% Max Mana."
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:copper_block",
+      "text": "Slightly unwieldy, but marked by an above average internal mana flow. Held back in durability by the corrosive effect mana has on the material.$(br2)+640 Durability, +5%% Casting Time, -10%% Cooldown Time."
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:iron_block",
+      "text": "Stronger and heavier than copper. Subject to rapid oxidation under exposure to mana.$(br2)+896 Durability, +10%% Casting Time, -5%% Cooldown Time, -8%% Max Mana."
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:netherite_block",
+      "text": "Dense, heavy material prevents the flow of mana. Offers unparalleled durability.$(br2)+1344 Durability, +15%% Casting Time, -8%% Cooldown Time, -5%% Max Mana."
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "item": "lingua_mundi:infused_iron_rod",
+      "text": "Arcane properties ease the flow of mana compared to raw iron. High compatibility with mana, and easily able to absorb excess energies.$(br2)+1028 Durability, +7%% Casting Time, -15%% Cooldown Time, +10%% Max Mana."
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:calcite",
+      "text": "One of the two Noble Stones, highly compatible with mana.$(br2)+832 Durability, +5%% Casting Time, -8%% Cooldown Time, +10%% Max Mana."
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:blackstone",
+      "text": "One of the two Noble Stones, possesses a good internal mana flow.$(br2)+832 Durability, +5%% Casting Time, -10%% Cooldown Time, +7%% Max Mana."
+    }
+  ]
+}

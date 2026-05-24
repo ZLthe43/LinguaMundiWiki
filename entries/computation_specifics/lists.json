@@ -1,0 +1,97 @@
+{
+  "name": "Lists",
+  "icon": "minecraft:lectern",
+  "category": "lingua_mundi:computation_specifics",
+  "priority": false,
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Lists are a way to conveniently store species on the stack. A list species is at its core, an ordered container of other species. Lists are able to hold any species imaginable, and do not prevent practitioners from mixing the types of species present in an individual list."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.list_from_n",
+      "glyph": "lingua_mundi:list_from_n",
+      "text": "$(n)A, B, C, num$() → $(n)list$()$(br)Reads the number at the head and creates a list of matching length from species on the capsum. The list is ordered such that species added to the capsum earlier are further ahead on the returned list.$(br)eg. A, B, C, 3 → list of A, B and C, in that order"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.append",
+      "glyph": "lingua_mundi:append",
+      "text": "$(n)list, A$() → $(n)list$()$(br)Adds the species at the head to the end of the list below the head. If given a list at the head, that list is added to the end of the list below the head, preserving order in both lists."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.prepend",
+      "glyph": "lingua_mundi:prepend",
+      "text": "$(n)list, A$() → $(n)list$()$(br)Adds the species at the head to the start of the list below the head. If given a list at the head, that list is added at the front of the list below the head, preserving order in both lists."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.consolidate",
+      "glyph": "lingua_mundi:consolidate",
+      "text": "$(n)list$() → $(n)list$()$(br)Removes all null elements from a list. Useful for cleaning data a practitioner does not know to be fully composed of valid values."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.split_head",
+      "glyph": "lingua_mundi:split_head",
+      "text": "$(n)list$() → $(n)list$(), A$(br)Pops a list, removes the element at the head, then pushes the resulting list and the element removed from the front of that list, in that order (the species removed from the list is at the head)."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.get_index",
+      "glyph": "lingua_mundi:get_index",
+      "text": "$(n)list, num$() → $(n)A$()$(br)Returns the element at the position of the list specified by the number at the head."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.set_index",
+      "glyph": "lingua_mundi:set_index",
+      "text": "$(n)list, A, num$() → $(n)list$()$(br)Replaces the element on the list at the position specified by the number at the head with the species below the head.$(br)eg. list, A, 2 → list with 2nd element replaced by A"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.split_at",
+      "glyph": "lingua_mundi:split_at",
+      "text": "$(n)list, num$() → $(n)list, list$()$(br)Splits a list by the number at the head. Returns a list with the elements up to the given number (the ‘left’ side), and a list with the elements after place denoted by the number (the ‘right’ side).$(br)eg. list, 2 → list of first 2 elements, list of the remaining elements"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.insert_at",
+      "glyph": "lingua_mundi:insert_at",
+      "text": "$(n)list, A, num$() → $(n)list$()$(br)Adds a given element at the place on a list specified by the number at the head. Does not delete existing elements, simply shifts them by a place.$(br)eg. list, A, 3 → list with A at the 3rd place, where the original third place is now at the 4th place"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.remove_at",
+      "glyph": "lingua_mundi:remove_at",
+      "text": "$(n)list, num$() → $(n)list$()$(br)Pops a list, removes the element at the place specified by the number, and then returns the resulting list. Does not leave a null value behind.$(br)eg. list, 3 → list without its 3rd element"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.sublist",
+      "glyph": "lingua_mundi:sublist",
+      "text": "$(n)list, num, num$() → $(n)list$()$(br)Pops a list, selects the elements starting from the number below the head and ending at the number at the head.$(br)eg. list, 1, 4 → list of elements starting at the 1st element and ending at the 3rd element"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.list_length",
+      "glyph": "lingua_mundi:list_length",
+      "text": "$(n)list|str$() → $(n)num$()$(br)Pops a list off the capsum and returns the number of elements it contains. Offers the same functionality for strings."
+    }
+  ]
+}

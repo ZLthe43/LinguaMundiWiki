@@ -1,0 +1,43 @@
+{
+  "name": "Chaining Projectiles",
+  "icon": "minecraft:arrow",
+  "category": "lingua_mundi:tutorials",
+  "priority": false,
+  "sortnum": 3,
+
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This tutorial seeks to expand the reader’s notion of spell chaining to projectiles, demonstrating one way in which a projectile might be cast from the impact point of another projectile.$(br2)The following spell will be executed across two pages. It first cast a firebolt, storing the projectile’s direction vector. It then executes a series"
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "of operations on the projectile’s result in order to generate a direction species by which to reflect the original direction vector. Finally, it uses the reflected direction vector and the impact point position vector to cast a second firebolt, creating a ricochet effect."
+    },
+
+    {
+      "type": "lingua_mundi:tutorial_showcase",
+      "title": "I: Ricochet Firebolt",
+      "image": "lingua_mundi:textures/gui/textbook/reflect_tutorial_1.png",
+      "text": "Casts a firebolt, saving its direction vector onto the tag and cloning the impact position twice, leaving three species for the impact position vector on the capsum."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "1) Gets the caster’s position.$(br2)2) Gets the caster’s look vector and saves a copy of this species onto the tag.$(br2)3) Casts the firebolt and retrieves the vector position from the impact result.$(br2)4) Duplicates the vector twice, meaning the capsum contains three copies of the impact position vector."
+    },
+
+    {
+      "type": "lingua_mundi:tutorial_showcase",
+      "title": "II: Ricochet Firebolt",
+      "image": "lingua_mundi:textures/gui/textbook/reflect_tutorial_2.png",
+      "text": "Uses the three impact position results, to cast a second firebolt from the impact point that emulates a ricochet."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "5) Gets the block position of the block hit, and then gets the direction matching the face hit (up/north/east).$(br2)6) Reads the tag, pushing the original direction vector onto the head, and swaps. Then reflects the vector by the direction species.$(br2)7) The capsum contains the reflected vector and a copy of the impact position vector. Pushes an integer and completes the firebolt cast."
+    }
+  ]
+}

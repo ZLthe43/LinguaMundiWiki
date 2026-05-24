@@ -1,0 +1,156 @@
+{
+  "name": "Maths",
+  "icon": "minecraft:stick",
+  "category": "lingua_mundi:computation_specifics",
+  "priority": false,
+  "sortnum": 1,
+
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "These glyphs represent some basic mathematical operations. While not needed for all enchantments, more complex spellforms do rely on these for their correct functioning. While often limited to number species, some glyphs in this section also apply to vector species."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.minus",
+      "glyph": "lingua_mundi:minus",
+      "text": "$(n)num|vec$() → $(n)num|vec$()$(br)Returns the additive inverse of the head, equivalent to multiplying by -1. $(br2)For vectors, this operation is applied to each component (as per multiplication by -1)."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.add",
+      "glyph": "lingua_mundi:add",
+      "text": "$(n)num|vec, num|vec$() → $(n)num|vec$()$(br)Pops two number or vector species, adds them, and pushes the result. Behaviour changes depending on popped species."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Two numbers: num, num → num$(br)Standard addition.$(br2)$(li)Two vectors: vec, vec → vec$(br)Standard vector addition.$(br2)$(li)Vec & Num: vec, num → vec$(br)Regardless of order, adds the number to each of the vector’s components."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.sub",
+      "glyph": "lingua_mundi:sub",
+      "text": "$(n)num|vec, num|vec$() → $(n)num|vec$()$(br)Subtracts the species at the head from the species below it. Behaviour changes depending on popped species."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Two numbers: num, num → num$(br)Subtract head from number below it.$(br2)$(li)Two vectors: vec, vec → vec$(br)Subtract head from vector below it.$(br2)$(li)Vec & Num: vec, num → vec$(br)Subtract number from each of the vector’s components."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.mult",
+      "glyph": "lingua_mundi:mult",
+      "text": "$(n)num|vec, num|vec$() → $(n)num|vec$()$(br)Multiplies the top two species. Behaviour changes depending on popped species."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Two numbers: num, num → num$(br)Standard multiplication.$(br2)$(li)Two vectors: vec, vec → vec$(br)Take the dot product of both vectors.$(br2)$(li)Vec & Num: vec, num → vec$(br)Order-insensitive, scale the vector by the number."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.div",
+      "glyph": "lingua_mundi:div",
+      "text": "$(n)num|vec, num|vec$() → $(n)num|vec$()$(br)Divides the species below the head by the species at the head. Behaviour changes depending on popped species. Do not divide by 0."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Two Nums: num1, num2 → num$(br)Returns num1/num2, where num2 was at the head.$(br2)$(li)Two Vecs: vec1, vec2 → vec$(br)Takes the cross product vec1 x vec 2, where vec2 was at the head.$(br2)$(li)Vec & Num: vec, num → vec$(br)Scales the vector by the reciprocal of the number.$(br)(eg. A, 4 → A scaled by 1/4)"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.clamp",
+      "glyph": "lingua_mundi:clamp",
+      "text": "$(n)num, num, num$() → $(n)num$()$(br)Uses the head and the number below it to adjust the number at the third place on the capsum."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "Consider the case $(o)x$(), $(o)a$(), $(o)b$():$(br2)$(li)If $(o)x$() is within [$(o)a$(), $(o)b$()], then the glyph returns $(o)x$().$(br2)$(li)If $(o)x$() < $(o)a$(), returns $(o)a$().$(br2)$(li)If $(o)x$() > $(o)b$(), returns $(o)b$()."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.lerp",
+      "glyph": "lingua_mundi:lerp",
+      "text": "$(n)num|vec, num|vec, num|vec$()$(br) → $(n)num|vec$()$(br)Moves from the third value to the second value by the amount specified by the head.$(br2)Standard equation:$(br)$(o)a$(), $(o)b$(), $(o)t$() → $(o)a$() + $(o)t$() x ($(o)b$() - $(o)a$())"
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "$(li)For numbers, apply the standard equation.$(br2)$(li)For cases where $(o)a$() & $(o)b$() are vectors, applies the standard equation using vector operations.$(br2)$(li)For all vectors, applies the standard equation per axis (on a1, b1 and t1, so on and so forth), returning the resulting vector."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.modulo",
+      "glyph": "lingua_mundi:modulo",
+      "text": "$(n)num|vec, num$() → $(n)num|vec$()$(br)Takes the modulus of the species below the head with respect to the head (the remainder from division).$(br2)If the number below the head is a vector, the modulus of each component with respect to the number is taken."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.exp",
+      "glyph": "lingua_mundi:exp",
+      "text": "$(n)num, num$() → $(n)num$()$(br)Exponentiates the number below the head by the head. $(br2)eg. $(o)a$(), $(o)b$() → $(o)a$()^$(o)b$()"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.floor",
+      "glyph": "lingua_mundi:floor",
+      "text": "$(n)num$() → $(n)num$()$(br)Pops a number, rounds it down if possible, and pushes the result onto the capsum."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.ceil",
+      "glyph": "lingua_mundi:ceil",
+      "text": "$(n)num$() → $(n)num$()$(br)Pops a number, rounds it up if possible, and pushes the result onto the capsum."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.round",
+      "glyph": "lingua_mundi:round",
+      "text": "$(n)num$() → $(n)num$()$(br)Pops a number, rounds it according to the standard method, and pushes the result onto the capsum."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.abs",
+      "glyph": "lingua_mundi:abs",
+      "text": "$(n)num|vec$() → $(n)num|vec$()$(br)Pops the top species and returns the absolute value.$(br2)For vectors, the glyph takes the absolute value of each component and returns the resulting vector."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.sign",
+      "glyph": "lingua_mundi:sign",
+      "text": "$(n)num$() → $(n)num$()$(br)Pops a number, and pushes onto the capsum either -1, 0 or 1 depending on whether the popped number was negative, zero or positive."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.min",
+      "glyph": "lingua_mundi:min",
+      "text": "$(n)num, num$() → $(n)num$()$(br)Pops two numbers and pushes only the smallest of the two onto the capsum."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.max",
+      "glyph": "lingua_mundi:max",
+      "text": "$(n)num, num$() → $(n)num$()$(br)Pops two numbers and pushes only the largest of the two onto the capsum."
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "name": "On Gems",
+  "icon": "lingua_mundi:celerium",
+  "category": "lingua_mundi:casting_items",
+  "priority": false,
+  "sortnum": 3,
+
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Gems are the main computational element in staves. They are responsible for actually executing and managing enchantments, as well as controlling individual spellforms. Their position is so central that it can be said that gems are the main source of a staff’s properties."
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "item": "lingua_mundi:gemcutter",
+      "text": "Gems must be cut and faceted, a process commonly described as “revealing”. This procedure is commonly done on a “Gemcutter”. The Gemcutter thus is able to both reveal the gem’s base properties, as well as allow for the application of upgrades. Upgrades apply additional modifiers to a gem’s "
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "properties, and can be applied to any gem provided it has sufficient upgrade slots.$(br2)For further information on gem upgrades, refer to the section $(l:lingua_mundi:casting_items/gem_upgrades)On Gem Upgrades$().$(br2)The following pages will discuss the different properties of gemstones, and their effect on the final product."
+    },
+
+    {
+      "type": "patchouli:empty"
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:diamond",
+      "text": "A common gem found in the depths of the earth."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "-7%% to +5%% Mana Cost, $(br2)+10 to +40 Max Mana, $(br2)+7 to +12 Computation, $(br2)+2 Max Schools, $(br2)0 to 2 Upgrade Slots."
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:amethyst_shard",
+      "text": "A quartz formation with minor arcane resonance."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "+0%% to +5%% Spell Power, $(br2)+0%% to -5%% Mana Cost, $(br2)+50 to +120 Max Mana, $(br2)+10 to +25 Computation, $(br2)+2 Max Schools, $(br2)1 to 3 Upgrade Slots."
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:heart_of_the_sea",
+      "text": "An oceanbound artifact with a special resonance with water-aligned mana."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "+0%% to +10%% Spell Power, $(br2)+0%% to -10%% Mana Cost, $(br2)+80 to +240 Max Mana, $(br2)+12 to +30 Computation, $(br2)+2 Max Schools, $(br2)0 to 4 Upgrade Slots, $(br2)Enables buffs for Water-type glyphs."
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "item": "lingua_mundi:mana_gem",
+      "text": "A rare gem formed from congealed mana. Good arcane resonance."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "+0%% to +15%% Spell Power, $(br2)+0%% to -10%% Mana Cost, $(br2)+0%% to -5%% Cooldown Time, $(br2)+90 to +320 Max Mana, $(br2)+16 to +45 Computation, $(br2)+2 to +3 Max Schools, $(br2)1 to 3 Upgrade Slots."
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "item": "lingua_mundi:nether_agate",
+      "text": "Found rarely in the the Nether, strong resonance with fire-aligned mana. Formed by the churning of lava in the Basalt Deltas."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "+0%% to +20%% Spell Power, $(br2)+0%% to -18%% Mana Cost, $(br2)+120 to +460 Max Mana, $(br2)+18 to +75 Computation, $(br2)+2 Max Schools, $(br2)0 to 5 Upgrade Slots, $(br2)Enables buffs for Fire-type glyphs."
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "item": "lingua_mundi:peridot",
+      "text": "A rare gem of the deep. It has a strong resonance with conjuration-aligned mana. Found only under the world's highest peaks."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "+0%% to +5%% Spell Power, $(br2)+0%% to -5%% Mana Cost, $(br2)+0%% to -15%% Cooldown Time, $(br2)+210 to +660 Max Mana, $(br2)+45 to +180 Computation, $(br2)+2 Max Schools, $(br2)1 to 4 Upgrade Slots, $(br2)Enables buffs for Conjuration-type glyphs."
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "item": "lingua_mundi:celerium",
+      "text": "An exquisite mana gem from the End dimension, never forms in contact with the air."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "+0%% to +50%% Spell Power, $(br2)+0%% to -25%% Mana Cost, $(br2)+350 to +1700 Max Mana, $(br2)+84 to +202 Computation, $(br2)+2 to +3 Max Schools, $(br2)2 to 6 Upgrade Slots."
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lingua_mundi:gemcutter",
+      "text": "For revealing and modifying gems."
+    }
+  ]
+}

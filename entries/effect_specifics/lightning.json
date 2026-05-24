@@ -1,0 +1,79 @@
+{
+  "name": "Lightning Magic",
+  "icon": "minecraft:lightning_rod",
+  "category": "lingua_mundi:effect_specifics",
+  "priority": false,
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Lighting is a powerful element, representing power and precision combined. Its effects are fast, highly damaging and often unbound. Many spells of this school deal area damage while also preserving the ability for high single-target damage."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.summon_storm",
+      "glyph": "lingua_mundi:summon_storm",
+      "text": "→$(br)Summons a thunderstorm the instant it is cast.$(br2)Mana cost: 80"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.lightning_bolt",
+      "glyph": "lingua_mundi:lightning_bolt",
+      "text": "$(n)vec, num$() →$(br)Pops a number for power and a vector for position. Summons a lightning bolt at the given vector position. Deals damage equal to power to any entity within 4 blocks of the point of impact, depending on distance and capped at 40 damage.$(br2)Mana cost: 20 + pow^1.5"
+    },
+
+    {
+      "type": "patchouli:empty"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.spark",
+      "glyph": "lingua_mundi:spark",
+      "text": "$(n)vec, vec, num$() → $(n)result$()$(br)Pops a number describing power, followed by a vector describing direction and a vector describing origin. Shoots a spark that deals damage to targets to the given power value, capped at 8 damage. Can damage any entity within 1 block of the projectile, providing a ray"
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "result for each affected entity. This allows the spark to graze targets, or to hit multiple clustered targets.$(br2)Mana cost: 10 + 1.4 * pow^1.4"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.electroball",
+      "glyph": "lingua_mundi:electroball",
+      "text": "$(n)vec, vec, num$() → $(n)result$()$(br)Pops a number describing power, followed by a vector describing direction and a vector describing origin. Shoots an electroball that deals damage to targets to the given power value, capped at 15 damage. Can damage any entity within 1 block of the projectile, providing a ray"
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "result for each affected entity. This allows the spark to graze targets, or to hit multiple clustered targets.$(br2)Mana cost: 10 + 1.4 * pow^1.4"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.shock_probe",
+      "glyph": "lingua_mundi:shock_probe",
+      "text": "$(n)vec, vec, num$() → $(n)result$()$(br)Pops a number for power, a vector for direction and a vector for origin. Produces a damaging electric ray that instantly returns its endpoint as a ray result. Lingers for a time, dealing damage to any entities that touch it and pushing them onto the magazine as a ray result."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "Damage is equal to power, capped at 15.$(br)$(li)Range = 10 + pow, capped at 20.$(br2)Mana cost: 5 + pow^1.2"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.lightning_probe",
+      "glyph": "lingua_mundi:lightning_probe",
+      "text": "$(n)vec, vec, num$() → $(n)result$()$(br)Pops a number for power, a vector for direction and a vector for origin. Produces a high-powered electric ray that instantly returns its endpoint as a ray result. Lingers for a time, dealing damage to any entities that touch it and pushing them onto the magazine as a ray result."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "Damage is equal to power, capped at 30.$(br)$(li)Range = 10 + 2.6 * pow, capped at 36.$(br2)Mana cost: 15 + pow^1.5"
+    }
+  ]
+}

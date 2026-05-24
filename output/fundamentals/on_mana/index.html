@@ -8,19 +8,42 @@
 </head>
 
 <body>
-  <h1>
-    <img class="icon" src="/assets/lingua_mundi/mana_decoction_2.png">
-    On Mana
-  </h1>
 
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <button class="toggle" onclick="toggleSidebar()">☰</button>
+
+    <h3>Index</h3>
+    <div id="sidebar-sections"></div>
+  </div>
+
+  <!-- MAIN CONTENT -->
   <div class="content">
+
+    <h1>
+      <img class="icon" src="/assets/lingua_mundi/mana_decoction_2.png">
+      On Mana
+    </h1>
+
     <p>While lingua_mundiing creates enchantments with stable effects, it is not a field of pure Artifice. Enchantments assembled from glyphs still rely on the practitioner’s accumulated mana. While all living creatures are, to some extent, capable of absorbing mana, the capacity of this reservoir determines the magics that practitioners are able to execute.</p>
 <p>While mana capacity is largely determined at birth, it is known that certain decoctions imbued with pure mana can enhance this capacity, albeit to a limited extent. Furthermore, and for the benefit on non-collegiate students, breaking through the First Threshold does much to increase the capacity of storage and accumulation of practitioners’ reservoirs.</p>
 
 
 
 
+
   </div>
+
+</div>
+
+<!-- TOGGLE SCRIPT -->
+<script>
+function toggleSidebar() {
+  document.getElementById("sidebar").classList.toggle("collapsed")
+}
+</script>
 
 </body>
 </html>

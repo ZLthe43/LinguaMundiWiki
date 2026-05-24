@@ -1,0 +1,36 @@
+{
+  "name": "Casting a Firebolt",
+  "icon": "minecraft:fire_charge",
+  "category": "lingua_mundi:tutorials",
+  "priority": false,
+  "sortnum": 0,
+
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This tutorial seeks to teach the very basics of casting a projectile. While the firebolt is chosen for this tutorial, the knowledge here is applicable to any projectile or probe-based effect glyph."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "This is at its core a problem of providing the firebolt glyph to its requisite species. The firebolt wants a capsum that provides, starting from the head, a power level, a direction vector and an origin vector. The setup of the firebolt is thus geared towards providing these."
+    },
+
+    {
+      "type": "lingua_mundi:tutorial_showcase",
+      "title": "Firebolt Slate",
+      "image": "lingua_mundi:textures/gui/textbook/firebolt_tutorial.png",
+      "text": "This spell allows the caster to create a firebolt that appears roughly at their chest, flies to where they are looking and deals 5 damage."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "1) Pushes the caster as a species onto the capsum and uses that species to return an origin point at the caster’s chest (so as to not blind the caster).$(br2)2) Pushes the caster as a species onto the capsum and uses that species to return the caster's look vector."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "3) Pushes the number 5 onto the capsum.$(br2)4) The capsum: $(br)origin, direction, 5,$(br)where 5 is at the head, allows for the firebolt to cast successfully."
+    }
+  ]
+}

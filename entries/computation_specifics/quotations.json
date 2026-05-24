@@ -1,0 +1,55 @@
+{
+  "name": "Quotations",
+  "icon": "minecraft:shulker_box",
+  "category": "lingua_mundi:computation_specifics",
+  "priority": false,
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This section will treat the glyphs involving quotation species. Quotation species are at their core lists of glyphs which can be stored on the stack to cast later, or cast only if some condition is met. They are useful for compressing spells with repeating sets of glyphs, or for gating functionality on some condition."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.open_quote",
+      "glyph": "lingua_mundi:open_quote",
+      "text": "→$(br)Serves as a sort of operator that tells the spell to add each glyph in the cursorium after this one onto a quotation species. Glyphs are added in the order they are encountered, similar to the cursorium."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.close_quote",
+      "glyph": "lingua_mundi:close_quote",
+      "text": "→$(br)A pair operator for open quote. Tells a spell to stop adding glyphs to a quotation species and to push it onto the capsum. Once on the capsum, the quote can never be modified."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.call_quote",
+      "glyph": "lingua_mundi:call_quote",
+      "text": "$(n)quote$() →$(br)Places the quote’s glyphs at the front of the cursorium and runs them. Effectively tells the spell to execute the glyphs contained in a quote in order."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.call_if",
+      "glyph": "lingua_mundi:call_if",
+      "text": "$(n)quote, bool$() →$(br)Calls the quote only if the boolean at the head of the stack has value true. Useful for gating functionality behind some condition."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.call_while",
+      "glyph": "lingua_mundi:call_while",
+      "text": "$(n)quote, bool$() →$(br)Calls the quote depending on whether a popped boolean has value true. Once the quote has finished executing, the glyph again pops the head of the stack and calls the quote again if it finds a true value. The loop continues until the value is false, or the spell meets some error."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.call_for_each",
+      "glyph": "lingua_mundi:call_for_each",
+      "text": "$(n)quote, list$() →$(br)For each species on the list, pushes the species onto the capsum and then calls the quote. This is repeated for each species in the list. Essentially allows practitioners to use a ‘for-each’ loop."
+    }
+  ]
+}

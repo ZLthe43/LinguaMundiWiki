@@ -1,0 +1,31 @@
+{
+  "name": "Casting an Explosion",
+  "icon": "minecraft:tnt",
+  "category": "lingua_mundi:tutorials",
+  "priority": false,
+  "sortnum": 1,
+
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This tutorial seeks to teach the basics of spell chaining. By chaining spells, practitioners can use their projectile spells as a base for other spells, for instance, an explosion. All projectiles return a species called a ray result, which may contain an entity, a position vector, or both. This allows practitioners to chain effects affecting both entities and location."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "In this tutorial, practitioners will cast Explosion. After casting a projectile spell, practitioners must pause the cursorium and wait until the projectile returns a result. After that, it is simply a matter of reading the result and providing a power level. The setup for the explosion is thus largely geared around casting the projectile and receiving the position."
+    },
+
+    {
+      "type": "lingua_mundi:tutorial_showcase",
+      "title": "Explosion Slate",
+      "image": "lingua_mundi:textures/gui/textbook/explosion_tutorial.png",
+      "text": "This spell creates an explosion comparable to TNT wherever the Firebolt hits."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "1) Sets up the firebolt cast, see $(l:lingua_mundi:tutorials/firebolt)Casting a Firebolt$() for further details.$(br2)2) Casts the firebolt and pauses the cursorium until the firebolt returns a result.$(br2)3) Reads the result’s location vector, and pushes an integer with value 4 onto the capsum.$(br2)4) With capsum: vec, 4, $(br)the spell now casts an explosion at the specified vector."
+    }
+  ]
+}

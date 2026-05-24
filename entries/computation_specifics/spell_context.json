@@ -1,0 +1,55 @@
+{
+  "name": "Spell Context",
+  "icon": "minecraft:map",
+  "category": "lingua_mundi:computation_specifics",
+  "priority": false,
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The following glyphs affect the spell’s core functioning, and are directly related to the cursorium’s execution. They are useful for gating and delaying the cursorium so glyphs run precisely when casters need them to."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.wait_input",
+      "glyph": "lingua_mundi:wait_input",
+      "text": "→$(br)Pauses the spell until an input is pushed onto the capsum. Useful for gating effects until after projectiles impact a target."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.wait_ticks",
+      "glyph": "lingua_mundi:wait_ticks",
+      "text": "$(n)number$() →$(br)Pauses the spell for the ticks specified by the provided number."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.stop",
+      "glyph": "lingua_mundi:stop",
+      "text": "→$(br)Stops a spell from executing any glyphs on the cursorium after this one."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.expect_pos",
+      "glyph": "lingua_mundi:expect_pos",
+      "text": "$(n)result$() → $(n)vector$()$(br)Reads a result expecting a vector. If found, returns the vector contained in the result, otherwise ends the spell’s execution."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.expect_entity",
+      "glyph": "lingua_mundi:expect_entity",
+      "text": "$(n)result$() → $(n)entity$()$(br)Reads a result expecting an entity. If found, returns the entity contained in the result, otherwise ends the spell’s execution."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.get_computation",
+      "glyph": "lingua_mundi:get_computation",
+      "text": "→ $(n)number$()$(br)Pushes onto the capsum a number corresponding to the remaining computation capacity of a casting item (computation for this glyph already deducted)."
+    }
+  ]
+}

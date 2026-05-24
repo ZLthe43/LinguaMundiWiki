@@ -1,0 +1,43 @@
+{
+  "name": "Using Quotations",
+  "icon": "minecraft:paper",
+  "category": "lingua_mundi:tutorials",
+  "priority": false,
+  "sortnum": 6,
+
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This tutorial demonstrates to practitioners how they may use quotations to replicate a certain effect multiple times. Quotations allow casters to push whole lists of glyphs onto the capsum, ready to cast at any time. This means rather than writing out the same string of glyphs repeatedly, practitioners may use a quotation to encapsulate that string of glyphs and simply"
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "run the quotation directly, saving space and reducing the processing needed to be done by their casting focus.$(br2)The following spell mirrors the one used in the previous exercise, but incorporates quotations in a way that both simplifies the spell and enhances its functionality."
+    },
+
+    {
+      "type": "lingua_mundi:tutorial_showcase",
+      "title": "I: Quote Lightning Spell",
+      "image": "lingua_mundi:textures/gui/textbook/quotes_tutorial_1.png",
+      "text": "Casts a lightning bolt, waits 2.5 seconds, and defines a quotation to poll the magazine for an entity and strike it with a lightning bolt."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "1) Sets up the cast for a lightning probe.$(br2)2) Casts the lightning probe and waits 2.5 seconds. Then opens a quotation.$(br2)3) Defines the quotation: Poll the magazine, get the entity from the hit result, and cast a lightning bolt at that entity’s position.$(br2)4) Closes the quotation, saving it onto the capsum."
+    },
+
+    {
+      "type": "lingua_mundi:tutorial_showcase",
+      "title": "II: Quote Lightning Spell",
+      "image": "lingua_mundi:textures/gui/textbook/quotes_tutorial_2.png",
+      "text": "Copies the previously defined quote five times and calls each of the quote species on the capsum, striking five different entities with lightning."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "5) Copies the quotation five times.$(br2)6) Calls the quotation five times, summoning lightning onto the first five entities corresponding to a hit result on the magazine."
+    }
+  ]
+}

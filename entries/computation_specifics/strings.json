@@ -1,0 +1,62 @@
+{
+  "name": "Strings",
+  "icon": "minecraft:string",
+  "category": "lingua_mundi:computation_specifics",
+  "priority": false,
+  "sortnum": 11,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "String species are essentially lists of characters that are used to store words and sentences. Characters in turn can be represented by ASCII values. Please take the time to study the ASCII value table here."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.string_from_list",
+      "glyph": "lingua_mundi:string_from_list",
+      "text": "$(n)list$() → $(n)string$()$(br)Creates a string from a list of integers, using each integer as an ASCII code."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.string_to_list",
+      "glyph": "lingua_mundi:string_to_list",
+      "text": "$(n)string$() → $(n)list$()$(br)Creates a list of integers from a string, where each integer matches the ASCII code for the character at the corresponding place in the string."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.join_string",
+      "glyph": "lingua_mundi:join_string",
+      "text": "$(n)str, str$() → $(n)str$()$(br)Joins the string at the head to the end of the string below the head.$(br)eg. “Hello”, “ World” → “Hello World”"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.split_string",
+      "glyph": "lingua_mundi:split_string",
+      "text": "$(n)str, num$() → $(n)str, str$()$(br)Splits a string by a given number. The characters before the place given by the number are placed in one string, and those at or after that place are placed in another string.$(br)eg. string, 3 → string of first 2 characters, string of characters in 3rd place and beyond"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.substring",
+      "glyph": "lingua_mundi:substring",
+      "text": "$(n)str, num, num$() → $(n)str, str$()$(br)Pops a string and two numbers. Creates a new string starting from the character at the place matching the number below the head, and ending at the place matching the number at the head.$(br)eg. “Hello”, 2, 4 → “ell”"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.to_lowercase",
+      "glyph": "lingua_mundi:to_lowercase",
+      "text": "$(n)string$() → $(n)string$()$(br)Sets all the characters in the string to lowercase."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.to_uppercase",
+      "glyph": "lingua_mundi:to_uppercase",
+      "text": "$(n)string$() → $(n)string$()$(br)Sets all the characters in the string to uppercase."
+    }
+  ]
+}

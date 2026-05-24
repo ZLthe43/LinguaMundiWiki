@@ -1,0 +1,51 @@
+{
+  "name": "On Staves",
+  "icon": "lingua_mundi:stavecrafter",
+  "category": "lingua_mundi:casting_items",
+  "priority": false,
+  "sortnum": 0,
+
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Staves are the main form of casting item in the modern age. They are composed of four parts: the slate, which holds the glyphs composing the enchantment; the rod, by which the staff is held; the cap, a reinforcement meant to provide additional structural integrity; and the gem, which controls and executes the enchantment as the main processing component."
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "item": "lingua_mundi:stavecrafter",
+      "text": "Staves may be assembled from any combination of parts at the stavecrafter. This workstation allows practitioners to apply gems, slates and materials for the rod and cap in order to create a staff. Beyond needing to have a full set of parts, any combination is valid. It is important that practitioners "
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "remain mindful of the effects of different parts on the appearance and properties of the resulting casting staff.$(br2)Staves may also be modified on the stavecrafter, allowing any part to be removed and changed as long as the staff has taken no more than light wear, usually considered to be below 5%% of its maximum durability. Although staves cannot be repaired at an anvil due to the nature of the wear they are subject to, they do"
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "accept common enchantments, such as Unbreaking and Mending, although these are fragile and disappear if staff parts are exchanged.$(br2)As mentioned earlier, staves each possess a set of unique properties that may affect casting, these are as follows:$(br2)$(l)Maximum Mana$(): A limit to the mana that can be expended by a single spellform."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Computation$(): A limit to the glyphs that can be executed by a single spellform.$(br2)$(l)Power Boost$(): A boost to the ‘power’ metric of spell effects. Exact definitions vary per glyph.$(br2)$(l)Mana Discount$(): A discount to the mana expenditure of a spell effect, applied before power is boosted. Capped at a maximum of -80%% Mana Cost."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Casting Time Modifier$(): A modifier to the base casting time computed by a casting item.$(br2)$(l)Cooldown Modifier$(): A modifier to the base cooldown computed by a casting item. Capped at a maximum of -90%% Casting Time.$(br2)$(l)Buff-Enabled Schools$(): A list of spell schools to which the power and mana modifiers apply."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Max Schools$(): A limit on the maximum schools that can be included in a single enchantment.$(br2)$(l)Durability$(): A measure of the structural integrity of a casting item."
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "recipe": "lingua_mundi:stavecrafter",
+      "text": "For crafting and modifying staves."
+    }
+  ]
+}

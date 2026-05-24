@@ -8,19 +8,42 @@
 </head>
 
 <body>
-  <h1>
-    <img class="icon" src="/assets/lingua_mundi/drafting_table.png">
-    Creating Enchantments
-  </h1>
 
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <button class="toggle" onclick="toggleSidebar()">☰</button>
+
+    <h3>Index</h3>
+    <div id="sidebar-sections"></div>
+  </div>
+
+  <!-- MAIN CONTENT -->
   <div class="content">
+
+    <h1>
+      <img class="icon" src="/assets/lingua_mundi/drafting_table.png">
+      Creating Enchantments
+    </h1>
+
     <p>In order to create enchantments, glyphs must be properly arranged so as to feed the correct instructions, in the correct order, to spellforms’ cursoria. For this purpose, gold slates, receptive to arcane energies, are inscribed in devices commonly called drafting tables.<br><br>From these glyph-bearing slates, instructions are </p>
 <p>aggregated into the cursorium in the order they are encountered, moving left to right along each line before descending to the next line, once again scrying from left to right. Beyond the search order imposed by the aggregation process, practitioners are free to format their glyphs as they consider best.</p>
 
 <p>hand side.<br><br>Glyphs may be dragged from the pallet or the slate, creating a copy at the targeted position. If glyphs on the slate are right-clicked or dragged off the drafting panel, they are deleted. Shift-clicking toggles selection, allowing glyphs to be moved rather than copied.<br><br>Due to the many glyphs that have been discovered since the dawn of the Modern Age,</p>
 <p>most drafting tables are equipped with filtering mechanisms which allow for users to limit the scope of their pallet to glyphs of a certain type.</p>
 
+
   </div>
+
+</div>
+
+<!-- TOGGLE SCRIPT -->
+<script>
+function toggleSidebar() {
+  document.getElementById("sidebar").classList.toggle("collapsed")
+}
+</script>
 
 </body>
 </html>

@@ -1,0 +1,31 @@
+{
+  "name": "Placing a Block",
+  "icon": "minecraft:oak_planks",
+  "category": "lingua_mundi:tutorials",
+  "priority": false,
+  "sortnum": 2,
+
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This tutorial seeks to demonstrate some of the methods available to practitioners when working with block positions. While they may seem similar to vectors, there are some nuances that arise when working with position species, namely, conversion.$(br2)Thus, the following spell will cast a probe, an instant"
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "projectile, using $(l:lingua_mundi:tutorials/firebolt)methods already covered in this section$(), and chain a place block glyph to the projectile. This is done by converting the result into a vector, and then again into a block position corresponding to the block on the face of the impact point."
+    },
+
+    {
+      "type": "lingua_mundi:tutorial_showcase",
+      "title": "Place Block Slate",
+      "image": "lingua_mundi:textures/gui/textbook/place_block_tutorial.png",
+      "text": "This spell places a block at the position on the face of the block at the impact point."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "1) Set up a force probe with a range of 15 blocks.$(br2)2) Cast the force probe and extract a vector position from the probe’s result.$(br2)3) Convert that vector position into the block position matching the block directly on the face of the block at the impact point.$(br2)4) Use the block position on the capsum to place a block."
+    }
+  ]
+}

@@ -8,15 +8,38 @@
 </head>
 
 <body>
-  <h1>
-    <img class="icon" src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.1/assets/minecraft/textures/item/bucket.png">
-    On Species
-  </h1>
 
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <button class="toggle" onclick="toggleSidebar()">☰</button>
+
+    <h3>Index</h3>
+    <div id="sidebar-sections"></div>
+  </div>
+
+  <!-- MAIN CONTENT -->
   <div class="content">
+
+    <h1>
+      <img class="icon" src="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.1/assets/minecraft/textures/item/bucket.png">
+      On Species
+    </h1>
+
     <p>Species is a general term used to describe the references spells keep to different objects. Common species are numbers, vectors, entities, block positions, booleans and lists. <br><br>Other, more specific species include quotations, strings, quaternions, frames, planes and results.</p>
 <p>For more detailed discussion on this topic, refer to the section $(l:lingua_mundi:computation_specifics)Specifics in Computation:.</p>
+
   </div>
+
+</div>
+
+<!-- TOGGLE SCRIPT -->
+<script>
+function toggleSidebar() {
+  document.getElementById("sidebar").classList.toggle("collapsed")
+}
+</script>
 
 </body>
 </html>

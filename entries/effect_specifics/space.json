@@ -1,0 +1,55 @@
+{
+  "name": "Space Magic",
+  "icon": "minecraft:ender_pearl",
+  "category": "lingua_mundi:effect_specifics",
+  "priority": false,
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Space is one of the more exotic elements covered in most courses on lingua_mundi, often part of advanced tracks. It includes the most complex, rare and difficult magic to cast. From teleportation to portable subspaces, Space magic covers everything related to altering the fabric of reality."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.blink",
+      "glyph": "lingua_mundi:blink",
+      "text": "$(n)entity, vec, num$() →$(br)Pops a number for power, a vector for direction and a target entity. Causes the target to blink across a number of blocks equal to power, along the given direction. Ideal for short-range teleportation.$(br2)Mana cost: pow^2.5"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.ender_chest",
+      "glyph": "lingua_mundi:ender_chest",
+      "text": "$(n)entity$() →$(br)Pops an Player species as its target, and allows the target access to their ender chest inventory.$(br2)Mana cost: 40"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.space_slash",
+      "glyph": "lingua_mundi:space_slash",
+      "text": "$(n)vec, num$() →$(br)Pops a number for power, and a vector for position. Creates a linear distortion at the given point, slicing reality apart and causing damage equal to the given value for power, capped at 60.$(br2)Mana cost: 10 + 1.5 * pow^1.5"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.teleport",
+      "glyph": "lingua_mundi:teleport",
+      "text": "$(n)entity, vec$() →$(br)Pops a vector for target coordinate, and an entity species. Teleports the given entity to the target destination with a cost depending on the distance travelled. Ideal for mid-range teleportation.$(br2)Mana cost: distance * 5"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.true_invisibility",
+      "glyph": "lingua_mundi:true_invisibility",
+      "text": "$(n)entity, num$() →$(br)Pops a number for time, and an entity species for target. Bends space such that the target entity cannot be perceived, for seconds equal to 10 times the given time value.$(br2)Mana cost: time * 50"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.greater_teleport",
+      "glyph": "lingua_mundi:greater_teleport",
+      "text": "$(n)entity, vec$() →$(br)Pops a vector for target coordinate, and an entity species. Teleports the given entity to the target destination, with a flat mana cost. Ideal for long-range teleportation.$(br2)Mana cost: 500"
+    }
+  ]
+}

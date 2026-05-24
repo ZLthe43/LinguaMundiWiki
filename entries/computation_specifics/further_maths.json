@@ -1,0 +1,83 @@
+{
+  "name": "Further Maths",
+  "icon": "minecraft:blaze_rod",
+  "category": "lingua_mundi:computation_specifics",
+  "priority": false,
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "These glyphs further expand the practitioner’s tools for mathematical evaluation. Most of these glyphs concern themselves with trigonometry, useful for computing angles to create precise effects in real space."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.sin",
+      "glyph": "lingua_mundi:sin",
+      "text": "$(n)number$() → $(n)number$()$(br)Takes a number, interprets it as an angle in degrees, and returns its corresponding sine value."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.cos",
+      "glyph": "lingua_mundi:cos",
+      "text": "$(n)number$() → $(n)number$()$(br)Takes a number, interprets it as an angle in degrees, and returns its corresponding cosine value."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.tan",
+      "glyph": "lingua_mundi:tan",
+      "text": "$(n)number$() → $(n)number$()$(br)Takes a number, interprets it as an angle in degrees, and returns its corresponding tangent value."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.asin",
+      "glyph": "lingua_mundi:asin",
+      "text": "$(n)number$() → $(n)number$()$(br)Pops a number, takes its arcsine, and returns the result in degrees."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.acos",
+      "glyph": "lingua_mundi:acos",
+      "text": "$(n)number$() → $(n)number$()$(br)Pops a number, takes its arccosine, and returns the result in degrees."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.atan",
+      "glyph": "lingua_mundi:atan",
+      "text": "$(n)number$() → $(n)number$()$(br)Pops a number, takes its arctangent, and returns the result in degrees."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.atan2",
+      "glyph": "lingua_mundi:atan2",
+      "text": "$(n)num, num$() → $(n)num$()$(br)A variant of arctangent that is sensitive to quadrant. Takes the head to be x, and the number below the head to be y, and evaluates for arctangent on the point (x, y).$(br)eg. y, x → the arctan of line corresponding to the point (x, y) on the unit circle"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.logab",
+      "glyph": "lingua_mundi:logab",
+      "text": "$(n)num, num$() → $(n)num$()$(br)Takes the logarithm of the number below the head with the number at the head as the base.$(br)eg. a, b → log of a with base b"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.to_radian",
+      "glyph": "lingua_mundi:to_radian",
+      "text": "$(n)number$() → $(n)number$()$(br)Takes a number, interprets it as a value in degrees, and returns the corresponding value in radians."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.to_degree",
+      "glyph": "lingua_mundi:to_degree",
+      "text": "$(n)number$() → $(n)number$()$(br)Takes a number, interprets it as a value in radians, and returns the corresponding value in degrees."
+    }
+  ]
+}

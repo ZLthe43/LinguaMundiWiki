@@ -1,0 +1,370 @@
+{
+  "name": "Spatial",
+  "icon": "minecraft:minecart",
+  "category": "lingua_mundi:computation_specifics",
+  "priority": false,
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This is perhaps the most important entry in this section. It deals with glyphs dealing in vector, block position, quaternion, frame and plane species. These species help practitioners define points in space, shaping their spell effects into the desired form."
+    },
+
+    {
+      "type": "patchouli:text",
+      "title": "On Vectors",
+      "text": "Vectors are the key species to represent space, movement and direction. They can directly represent a minecraft coordinate position in the form (x, y, z), and they can also capture direction (eg, vector (0, 1, 0) represents going 1 block up the y-axis)."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.vec_build",
+      "glyph": "lingua_mundi:vec_build",
+      "text": "$(n)num, num, num$() → $(n)vec$()$(br)Pops three numbers and uses those to compose a vector, which is pushed onto the capsum.$(br)eg. 1, 2, 3 → (1, 2, 3), where 3 was at the head initially."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.vec_fill",
+      "glyph": "lingua_mundi:vec_fill",
+      "text": "$(n)number$() → $(n)vector$()$(br)Pops a number and composes a vector where all the coefficients are equal to that number.$(br)eg. 2 → (2, 2, 2)"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.vec_destroy",
+      "glyph": "lingua_mundi:vec_destroy",
+      "text": "$(n)vec$() → $(n)num, num, num$()$(br)Pops a vector and returns its coefficients as individual number species on the capsum.$(br)eg. (x, y, z) → x, y, z, where the coefficient z ends up at the head."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.vec_normalise",
+      "glyph": "lingua_mundi:vec_normalise",
+      "text": "$(n)vec$() → $(n)vec$()$(br)Scales a given vector to make it into a unit vector. Essentially scales the vector to have a length of 1 while preserving direction."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.project_vec_on_vec",
+      "glyph": "lingua_mundi:project_vec_on_vec",
+      "text": "$(n)vec, vec$() → $(n)vec$()$(br)Projects the vector on the head onto the vector below. Essentially returns the image of the vector at the head on the vector below the head."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.vec_length",
+      "glyph": "lingua_mundi:vec_length",
+      "text": "$(n)vector$() → $(n)number$()$(br)Pops a vector and returns the number corresponding to its length."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.angle_between",
+      "glyph": "lingua_mundi:angle_between",
+      "text": "$(n)vec, vec$() → $(n)num$()$(br)Pops two vectors off the capsum and returns the number corresponding to the angle between the two vectors in degrees."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.rand_vec_in_sphere",
+      "glyph": "lingua_mundi:rand_vec_in_sphere",
+      "text": "$(n)number$() → $(n)vector$()$(br)Pops a number and returns a random vector with length equal or less than the popped number. Represents a random vector stretching from the origin to a random point within the radius given by the popped number."
+    },
+
+    {
+      "type": "patchouli:text",
+      "title": "On Block Positions",
+      "text": "Block positions are similar to vector species in that they represent space. However, block positions are directly linked to each block in the world. They allow practitioners to interact with block themselves. Likewise, face species represent the faces of blocks (up, down, north, south, east and west)."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.vec_to_block",
+      "glyph": "lingua_mundi:vec_to_block",
+      "text": "$(n)vector$() → $(n)position$()$(br)Pops a vector and returns the block position containing the vector. Not reliable to process vectors from results, as these are often on the border between two blocks."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.vec_hit_to_block_in",
+      "glyph": "lingua_mundi:vec_hit_to_block_in",
+      "text": "$(n)vector$() → $(n)position$()$(br)Pops a vector and returns a block position corresponding to the block the vector is in. Useful for processing vectors from results, as it can reliably return the block position corresponding to the impacted block."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.vec_hit_to_block_out",
+      "glyph": "lingua_mundi:vec_hit_to_block_out",
+      "text": "$(n)vector$() → $(n)position$()$(br)Pops a vector and returns a block position corresponding to the block on the face the vector hit. Useful for processing vectors from results, as it can reliably return the block position of the block on the face of the impacted block that was hit by the projectile."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.block_to_vec",
+      "glyph": "lingua_mundi:block_to_vec",
+      "text": "$(n)position$() → $(n)vector$()$(br)Takes a block position and returns the vector corresponding to the centre of the position."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.get_hit_face",
+      "glyph": "lingua_mundi:get_hit_face",
+      "text": "$(n)vec, pos$() → $(n)face$()$(br)Takes a vector and a position and returns the face on the block the vector is nearest to. Useful for computing the face impacted by a projectile. It is important to remember faces only encode direction, not position in space."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.reflect_vec",
+      "glyph": "lingua_mundi:reflect_vec",
+      "text": "$(n)vec, face$() → $(n)vec$()$(br)Pops a face and a vector off the capsum, and reflects the vector along the given face."
+    },
+
+    {
+      "type": "patchouli:text",
+      "title": "On Quaternions",
+      "text": "Quaternions are a species that can be used to represent rotations, convenient due to their relative simplicity. They are composed of 4 numbers, one to represent the angle of rotation, and the other three represent the axis of rotation. A quaternion representing a rotation by A about the axis determined by vector V can be represented as follows:$(br)[cos (A/2), V x sin (A/2)]$(br)which is equivalent to..."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "[cos A/2, V1 x sin(A/2), $(br)V2 x sin(A/2), V3 x sin(A/2)].$(br2)To determine the direction of the rotation, use the quaternion right hand rule, which readers are recommended to study."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.quat_build",
+      "glyph": "lingua_mundi:quat_build",
+      "text": "$(n)num, num, num, num$() → $(n)quat$()$(br)Builds a quaternion from the 4 numbers at the top of the stack.$(br)eg. 2, 3, 4, 5 → (2, 3, 4, 5)"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.quat_from_axis_angle",
+      "glyph": "lingua_mundi:quat_from_axis_angle",
+      "text": "$(n)vec, num$() → $(n)quat$()$(br)Builds a quaternion from a given angle (in degrees) and axis.$(br)eg. (0, 1, 0), 180 → (cos 90, 0, sin 90, 0) = (0, 0, 1, 0)"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.quat_from_yaw_pitch_roll",
+      "glyph": "lingua_mundi:quat_from_yaw_pitch_roll",
+      "text": "$(n)num, num, num$() → $(n)quat$()$(br)Pops 3 number representing yaw, pitch and roll angles in degrees and creates a quaternion by applying yaw, pitch and roll in that order. The input expects roll at the top, followed by yaw, which is followed by pitch."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.quat_compose",
+      "glyph": "lingua_mundi:quat_compose",
+      "text": "$(n)quat, quat$() → $(n)quat$()$(br)Takes two quaternions, and composes them. Composition essentially multiplies quaternions to create a single quaternion that combines both of the rotations represented by its factors. This operation is not commutative."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.quat_conjugate",
+      "glyph": "lingua_mundi:quat_conjugate",
+      "text": "$(n)quat$() → $(n)quat$()$(br)Takes a quaternion and returns its conjugate. Essentially changes the sign of each of a quaternion’s vector components, resulting in a quaternion that represents the opposite rotation to the original."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.quat_norm",
+      "glyph": "lingua_mundi:quat_norm",
+      "text": "$(n)quat$() → $(n)quat$()$(br)Scales a quaternion such that its norm equals 1. This is necessary to ensure a rotation is valid in 3D space."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.quat_normalise",
+      "glyph": "lingua_mundi:quat_normalise",
+      "text": "$(n)quat$() → $(n)num$()$(br)Returns the norm of a given quaternion. The norm of a quaternion can be understood to be its ‘magnitude’, the square root of each of its components squared.$(br)eg. (a, b, c, d) → sqrt(a^2 + b^2 + c^2 + d^2)"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.rotate_vec",
+      "glyph": "lingua_mundi:rotate_vec",
+      "text": "$(n)vec, quat$() → $(n)vec$()$(br)Applies the rotation embedded by a quaternion to a vector, returning the resulting vector."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.slerp",
+      "glyph": "lingua_mundi:slerp",
+      "text": "$(n)quat, quat, num$() → $(n)quat$()$(br)Takes two rotations, calculates the shortest possible arc between them, and returns a quaternion a portion of the way between them, determined by the number at the head.$(br)eg. q0, q1, t → quat that is t percent of the way between q0 and q1"
+    },
+
+    {
+      "type": "patchouli:text",
+      "title": "On Frames",
+      "text": "Frames are structures that represent a set of points relative to each other. The important feature of frames is that the relative positions of the points do not change as the frame moves around, allowing practitioners to define structures that remain coherent as they are translated and rotated."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.frame_origin_axes",
+      "glyph": "lingua_mundi:frame_origin_axes",
+      "text": "$(n)vec, vec, vec, vec$() → $(n)frame$()$(br)Creates a frame by taking the 4th vector as the origin and the three vectors above it as the axes that form the basis of the frame."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.frame_origin_fwd_up",
+      "glyph": "lingua_mundi:frame_origin_fwd_up",
+      "text": "$(n)vec, vec, vec$() → $(n)frame$()$(br)Create a frame by taking the 3rd vector from the head as the origin, and the top 2 as a pair of axes from which the 3rd axis needed to span 3D space is constructed. The third axis is simply the vector orthogonal to the top 2 vectors in the capsum."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.world_to_frame",
+      "glyph": "lingua_mundi:world_to_frame",
+      "text": "$(n)frame, vec$() → $(n)vec$()$(br)Takes a vector representing a coordinate in the world and returns the vector corresponding to the coordinate within the frame."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.frame_to_world",
+      "glyph": "lingua_mundi:frame_to_world",
+      "text": "$(n)frame, vec$() → $(n)vec$()$(br)Takes a vector representing a coordinate in the frame and returns a vector corresponding to the coordinate in the world."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.frame_rot_world",
+      "glyph": "lingua_mundi:frame_rot_world",
+      "text": "$(n)frame, quat$() → $(n)frame$()$(br)Rotates a frame’s orientation by an axis in the world."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.frame_rot_local",
+      "glyph": "lingua_mundi:frame_rot_local",
+      "text": "$(n)frame, quat$() → $(n)frame$()$(br)Rotates a frame’s orientation by an axis expressed in terms of the frame’s basis."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.translate_frame_world",
+      "glyph": "lingua_mundi:translate_frame_world",
+      "text": "$(n)frame, vec$() → $(n)frame$()$(br)Translates the frame’s origin by a vector in terms of the world."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.translate_frame_local",
+      "glyph": "lingua_mundi:translate_frame_local",
+      "text": "$(n)frame, vec$() → $(n)frame$()$(br)Translates the frame’s origin by a vector in terms of the frame."
+    },
+
+    {
+      "type": "patchouli:text",
+      "title": "On Planes",
+      "text": "Planes are a species that can represent a set of points that when combined, forms a plane. They are useful in order to construct sets of points in space that are aligned with each other along some axis. They have an origin point and a normal, representing a line perpendicular to the plane."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.plane_point_normal",
+      "glyph": "lingua_mundi:plane_point_normal",
+      "text": "$(n)vec, vec$() → $(n)plane$()$(br)Creates a plane by reading a normal vector on the head and a vector for its origin point, just below the head.$(br)eg. origin, normal → plane on the origin with the specified normal"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.proj_point_on_plane",
+      "glyph": "lingua_mundi:proj_point_on_plane",
+      "text": "$(n)plane, vec$() → $(n)vec$()$(br)Takes a point and projects it onto the given plane."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.reflect_point_plane",
+      "glyph": "lingua_mundi:reflect_point_plane",
+      "text": "$(n)plane, vec$() → $(n)vec$()$(br)Takes a point and returns a vector corresponding to the reflection of the point by the plane."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.point_plane_dist",
+      "glyph": "lingua_mundi:point_plane_dist",
+      "text": "$(n)plane, vec$() → $(n)num$()$(br)Takes a point and returns the shortest distance between the point and the plane’s surface."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.plane_basis",
+      "glyph": "lingua_mundi:plane_basis",
+      "text": "$(n)plane$() → $(n)vec, vec$()$(br)Takes a plane and returns a pair of vectors which span it (vectors which can be used to construct any other vector on the plane)."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.plane_normal",
+      "glyph": "lingua_mundi:plane_normal",
+      "text": "$(n)plane$() → $(n)vec$()$(br)Takes a plane and returns its normal vector."
+    },
+
+    {
+      "type": "patchouli:text",
+      "title": "On Planar Structures",
+      "text": "These glyphs rely on places to arrange points in a specific configuration. Using these glyphs, practitioners can create different shapes on a given plane, allowing them to structure and shape their spell effects more precisely."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.circle_on_plane",
+      "glyph": "lingua_mundi:circle_on_plane",
+      "text": "$(n)plane, vec, num, num$() → $(n)list$()$(br)Takes a plane, a centre point, and 2 numbers describing radius and number of points, with the latter on the head, and returns a list of vectors representing equally-distributed points on the circle.$(br)eg. plane, origin, radius, samples → list of points"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.jitter_on_plane",
+      "glyph": "lingua_mundi:jitter_on_plane",
+      "text": "$(n)plane, vec, num$() → $(n)vec$()$(br)Takes a plane, a centre point and a radius, and returns a random vector on the plane within the radius centred around the origin point."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.ngon_on_plane",
+      "glyph": "lingua_mundi:ngon_on_plane",
+      "text": "$(n)plane, vec, num, num, num$() → $(n)list$()$(br)Takes a plane, a centre point and 3 numbers describing radius, sides and rotation (in degrees), and returns a list of vectors corresponding to the vertices of a regular polygon of the specified number of sides.$(br)eg. plane, origin, radius, sides, angle → list of points"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.arc_on_plane",
+      "glyph": "lingua_mundi:arc_on_plane",
+      "text": "$(n)plane, vec, num, num, num, num$() → $(n)list$()$(br)Takes a plane, a centre point, and 4 numbers describing radius, starting and ending angles and number of points. Returns a list of points on the arc on the plane, of the specified radius, stretching between the starting and ending angles."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "$(br)eg. plane, origin, radius,$(br)angle 1, angle 2, samples $(br)→ list of points"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.grid_on_plane",
+      "glyph": "lingua_mundi:grid_on_plane",
+      "text": "$(n)plane, vec, num, num, num, num$() → $(n)list$()$(br)Takes a plane, a centre point and 4 numbers describing number of rows, columns, separation between rows and between columns. Returns the set of points at the vertices of the specified grid on the plane (where the rows intersect the columns)."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "$(br)eg. plane, origin, column num,$(br)row num, distance col., distance row → list of points"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.spiral_on_plane",
+      "glyph": "lingua_mundi:spiral_on_plane",
+      "text": "$(n)plane, vec, num, num, num, num, num$() → $(n)list$()$(br)Samples points on an Archimedean spiral. Takes a plane, a centre point and 5 numbers describing the position of each arm (a + b x θ) and the number of points. Returns a set of points on the described spiral."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "$(br)eg. plane, origin, a, b, θ1, θ2$(br)→ list of points"
+    }
+  ]
+}

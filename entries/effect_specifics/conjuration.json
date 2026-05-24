@@ -1,0 +1,153 @@
+{
+  "name": "Conjuration Magic",
+  "icon": "minecraft:emerald",
+  "category": "lingua_mundi:effect_specifics",
+  "priority": false,
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Conjuration magic is well known for its flexibility. This school is able to provide damage, protection and utility in equal measures. From visual and sound effects, to summoning, this type of magic offers something to everyone."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.force_probe",
+      "glyph": "lingua_mundi:force_probe",
+      "text": "$(n)vec, vec, num$() → $(n)result$()$(br)Pops a number for power, a vector for direction and a vector for origin. Produces a near-invisible tendril of force that instantly returns its endpoint as a ray result. Deals 1 damage, with range equal to the given power level.$(br2)Mana cost: 5 + pow^1.2"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.accelerate",
+      "glyph": "lingua_mundi:accelerate",
+      "text": "$(n)entity, vec, num$() →$(br)Pops a number for power, a vector for direction and a target entity. Accelerates the target entity to a speed equivalent to power-value block per tick in the given direction.$(br2)Mana cost: 5 + 3 * pow^2"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.conjure_light",
+      "glyph": "lingua_mundi:conjure_light",
+      "text": "$(n)position$() →$(br)Pops a block position and conjures a magical light at that block.$(br2)Mana cost: 5"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.conjure_block",
+      "glyph": "lingua_mundi:conjure_block",
+      "text": "$(n)position$() →$(br)Pops a block position and conjures a magical, tangible block at that position.$(br2)Mana cost: 10"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.redstone_pulse",
+      "glyph": "lingua_mundi:redstone_pulse",
+      "text": "$(n)pos, num$() →$(br)Pops a number, representing redstone power, and a block position. Creates an intangible redstone source at the given position, outputting redstone power at the given level.$(br2)Mana cost: 1"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.break_block",
+      "glyph": "lingua_mundi:break_block",
+      "text": "$(n)position$() →$(br)Pops a block position, and breaks the block at that position. Can break any block that can be broken with diamond tools, and does not apply neither fortune nor silk touch.$(br2)Mana cost: 5"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.firecracker",
+      "glyph": "lingua_mundi:firecracker",
+      "text": "$(n)vec, num$() →$(br)Pops a number for power, and a vector for position. Conjures a randomly-coloured firework explosion at the given position, dealing damage equal to power, capped at 20, to any entity within 2 blocks of the burst.$(br2)Mana cost: 15 + 1.4 * pow^1.5"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.summon_fang",
+      "glyph": "lingua_mundi:summon_fang",
+      "text": "$(n)vec, num$() →$(br)Pops a number for power and a vector for position. Summons a fang at the given position that rises up from the ground to bite at any target above, similar to the Evokers’ magic. Deals damage equal to power, capped at 20.$(br2)Mana cost: 10 + 1.1 * pow^1.3"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.summon_vex",
+      "glyph": "lingua_mundi:summon_vex",
+      "text": "$(n)entity, num$() →$(br)Pops a number for power, and an entity as a target. Summons a number of vexes equal to the given power, capped at 5, to follow and serve the given entity. They remain in the world for a 30 * pow seconds.$(br2)Mana cost: 50 * pow"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.flechette",
+      "glyph": "lingua_mundi:flechette",
+      "text": "$(n)vec, vec, num$() →$(br)Pops a number describing power, followed by a vector describing direction and a vector describing origin. Conjures an arrow-like projectile and shoots it  a speed equal to power-value blocks per tick."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "Deals damage equal to the product of 1.5 times speed, with a cap of 45 damage.$(br2)Mana cost: 10 + 1.6 * pow^1.5"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.anti_magic_shield",
+      "glyph": "lingua_mundi:anti_magic_shield",
+      "text": "$(n)vec, vec, num$() →$(br)Pops a number for power, a vector for orientation, and a vector for origin. Conjures an arcane shield at the given point, facing towards the given orientation. The shield has hitpoints equal to the given power value, but can absorb magic projectiles using its internal mana pool,"
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "equal to double the given power.$(br2)Mana cost: 0.8 * pow"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.fang_strike",
+      "glyph": "lingua_mundi:fang_strike",
+      "text": "$(n)vec, vec, num$() →$(br)Pops a number for power, a vector for direction and a vector for origin. Summons a line of fangs extending from the origin towards the given direction. Each fang can deal damage equal to power, capped at 20."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Count (n) = 5 + 0.5 * pow$(br2)Mana cost: 20 + 1.5 * pow^1.5 + 3 * n"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.fang_ward",
+      "glyph": "lingua_mundi:fang_ward",
+      "text": "$(n)vec, num$() →$(br)Pops a number for power, and a vector for origin. Summons concentric rings of fangs around the given point, with each fang dealing damage equal to power, capped at 20."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Rings (n) = 2 + pow / 3$(br2)Mana cost: 15 + 1.5 * pow^1.5 + 3 * n"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.place_block",
+      "glyph": "lingua_mundi:place_block",
+      "text": "$(n)position$() →$(br)Pops a block position. Searches the player’s inventory, starting from the offhand, then moving through each row in the inventory, starting from the top, from left to right, and finally searching the hotbar, from left to right. Places the first placeable item encountered,"
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "or throws a logic error if a block-item is not found.$(br2)Mana cost: 5"
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.play_note",
+      "glyph": "lingua_mundi:play_note",
+      "text": "$(n)vec, num, num$() →$(br)Pops a number for note, where the note can be anywhere from 0 to 24; pops a number for instrument, which can be between 0 and 21; and pops a vector for position."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "Instruments:$(li)0: Harp$(li)1: Bass$(li)2: Snare$(li)3: Hat$(li)4: Base drum$(li)5: Bell$(li)6: Flute$(li)7: Chime$(li)8: Guitar$(li)9: Xylophone$(li)10: Iron Xylophone$(li)11: Cow Bell$(li)12: Didgeridoo$(li)13: Bit$(li)14: Banjo"
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "$(li)15: Pling$(li)16: Skeleton$(li)17: Wither Skeleton$(li)18: Zombie$(li)19: Creeper$(li)20: Piglin$(li)21: Ender Dragon$(br2)Mana cost: 1"
+    }
+  ]
+}

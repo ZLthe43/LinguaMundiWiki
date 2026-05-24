@@ -1,0 +1,83 @@
+{
+  "name": "Constants",
+  "icon": "minecraft:cobblestone",
+  "category": "lingua_mundi:computation_specifics",
+  "priority": false,
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "These glyphs are tools to provide the stack with pre-set information, providing a source for many of the most fundamental species for many spells."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.push_int",
+      "glyph": "lingua_mundi:push_int",
+      "text": "→ $(n)number$()$(br)Pushes a given number onto the capsum. Practitioners may select the glyph by ‘shift-clicking’, allowing them to ‘hover and scroll’ in order to change the glyph’s value. Pressing ‘shift’ while scrolling modifies the number by 10. The value of this glyph may not be greater than 99."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.true",
+      "glyph": "lingua_mundi:true",
+      "text": "→ $(n)boolean$()$(br)Pushes a boolean with value true onto the capsum."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.false",
+      "glyph": "lingua_mundi:false",
+      "text": "→ $(n)boolean$()$(br)Pushes a boolean with value false onto the capsum."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.rand_int",
+      "glyph": "lingua_mundi:rand_int",
+      "text": "$(n)num$() → $(n)num$()$(br)Pushes onto the capsum a random integer between zero and a popped number."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.rand_double",
+      "glyph": "lingua_mundi:rand_double",
+      "text": "→ $(n)number$()$(br)Pushes a random decimal with a value between 0 and 1 onto the capsum."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.unit_x",
+      "glyph": "lingua_mundi:unit_x",
+      "text": "→ $(n)vector$()$(br)Pushes a unit vector in the x direction onto the capsum (1, 0, 0)."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.unit_y",
+      "glyph": "lingua_mundi:unit_y",
+      "text": "→ $(n)vector$()$(br)Pushes a unit vector in the y direction onto the capsum (0, 1, 0)."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.unit_z",
+      "glyph": "lingua_mundi:unit_z",
+      "text": "→ $(n)vector$()$(br)Pushes a unit vector in the z direction onto the capsum (0, 0, 1)."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.push_pi",
+      "glyph": "lingua_mundi:push_pi",
+      "text": "→ $(n)number$()$(br)Pushes a number with value pi onto the capsum."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.push_e",
+      "glyph": "lingua_mundi:push_e",
+      "text": "→ $(n)number$()$(br)Pushes a number with the value of Euler’s number onto the capsum."
+    }
+  ]
+}

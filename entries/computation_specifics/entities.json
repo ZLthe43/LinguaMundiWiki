@@ -1,0 +1,132 @@
+{
+  "name": "Entities",
+  "icon": "minecraft:cow_spawn_egg",
+  "category": "lingua_mundi:computation_specifics",
+  "priority": false,
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The following glyphs act on entities, allowing practitioners to distinguish, sort and detect entities of different types. Some return booleans depending on the type of entity fed, while others are meant for detection, and return lists of entities. For further details, research Minecraft’s entity classification system."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.is_animal",
+      "glyph": "lingua_mundi:is_animal",
+      "text": "$(n)entity$() → $(n)boolean$()$(br)Pops an entity and returns true if it is classified as an animal."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.is_hostile",
+      "glyph": "lingua_mundi:is_hostile",
+      "text": "$(n)entity$() → $(n)boolean$()$(br)Pops an entity and returns true if it is classified as hostile (monster)."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.is_item",
+      "glyph": "lingua_mundi:is_item",
+      "text": "$(n)entity$() → $(n)boolean$()$(br)Pops and entity and returns true if it is classified as an Item entity."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.is_player",
+      "glyph": "lingua_mundi:self",
+      "text": "$(n)entity$() → $(n)boolean$()$(br)Pops an entity and returns true if it is classified as a player."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.is_living",
+      "glyph": "lingua_mundi:is_living",
+      "text": "$(n)entity$() → $(n)boolean$()$(br)Pops an entity and returns true if it is classified as a ‘living entity’."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.is_mob",
+      "glyph": "lingua_mundi:is_mob",
+      "text": "$(n)entity$() → $(n)boolean$()$(br)Pops an entity and returns true if it is classified as a mob."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.zone_entity",
+      "glyph": "lingua_mundi:self",
+      "text": "$(n)vec, num$() → $(n)list$()$(br)Pops a number and a position vector. Sweeps a sphere of radius equal to the popped number and returns a list of the entities found within that region. The list may be empty, and will never contain more than 256 elements."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.zone_animal",
+      "glyph": "lingua_mundi:zone_animal",
+      "text": "$(n)vec, num$() → $(n)list$()$(br)Pops a number and a position vector. Sweeps a sphere of radius equal to the popped number and returns a list of entities classified as animals found within that region. The list may be empty, and will never contain more than 256 elements."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.zone_hostile",
+      "glyph": "lingua_mundi:zone_hostile",
+      "text": "$(n)vec, num$() → $(n)list$()$(br)Pops a number and a position vector. Sweeps a sphere of radius equal to the popped number and returns a list of entities classified as hostile/monsters found within that region. The list may be empty, and will never contain more than 256 elements."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.zone_item",
+      "glyph": "lingua_mundi:zone_item",
+      "text": "$(n)vec, num$() → $(n)list$()$(br)Pops a number and a position vector. Sweeps a sphere of radius equal to the popped number and returns a list of entities classified as item entities found within that region. The list may be empty, and will never contain more than 256 elements."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.zone_player",
+      "glyph": "lingua_mundi:zone_player",
+      "text": "$(n)vec, num$() → $(n)list$()$(br)Pops a number and a position vector. Sweeps a sphere of radius equal to the popped number and returns a list of entities classified as players found within that region. The list may be empty, and will never contain more than 256 elements."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.zone_living",
+      "glyph": "lingua_mundi:zone_living",
+      "text": "$(n)vec, num$() → $(n)list$()$(br)Pops a number and a position vector. Sweeps a sphere of radius equal to the popped number and returns a list of entities classified as ‘living entities’ found within that region. The list may be empty, and will never contain more than 256 elements."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.zone_not_animal",
+      "glyph": "lingua_mundi:zone_not_animal",
+      "text": "$(n)vec, num$() → $(n)list$()$(br)Pops a number and a position vector. Sweeps a sphere of radius equal to the popped number and returns a list of entities not classified as animals found within that region. The list may be empty, and will never contain more than 256 elements."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.zone_not_hostile",
+      "glyph": "lingua_mundi:zone_not_hostile",
+      "text": "$(n)vec, num$() → $(n)list$()$(br)Pops a number and a position vector. Sweeps a sphere of radius equal to the popped number and returns a list of entities not classified as hostile/monsters found within that region. The list may be empty, and will never contain more than 256 elements."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.zone_not_item",
+      "glyph": "lingua_mundi:zone_not_item",
+      "text": "$(n)vec, num$() → $(n)list$()$(br)Pops a number and a position vector. Sweeps a sphere of radius equal to the popped number and returns a list of entities not classified as item entities found within that region. The list may be empty, and will never contain more than 256 elements."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.zone_not_player",
+      "glyph": "lingua_mundi:zone_not_player",
+      "text": "$(n)vec, num$() → $(n)list$()$(br)Pops a number and a position vector. Sweeps a sphere of radius equal to the popped number and returns a list of entities not classified as players found within that region. The list may be empty, and will never contain more than 256 elements."
+    },
+
+    {
+      "type": "lingua_mundi:glyph_spotlight",
+      "title": "glyph.lingua_mundi.zone_not_living",
+      "glyph": "lingua_mundi:zone_not_living",
+      "text": "$(n)vec, num$() → $(n)list$()$(br)Pops a number and a position vector. Sweeps a sphere of radius equal to the popped number and returns a list of entities not classified as ‘living entities’ found within that region. The list may be empty, and will never contain more than 256 elements."
+    }
+  ]
+}
