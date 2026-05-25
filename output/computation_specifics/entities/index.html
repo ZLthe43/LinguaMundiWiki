@@ -30,23 +30,192 @@
 
     <p>The following glyphs act on entities, allowing practitioners to distinguish, sort and detect entities of different types. Some return booleans depending on the type of entity fed, while others are meant for detection, and return lists of entities. For further details, research Minecraft’s entity classification system.</p>
 
+        <div class="glyph-spotlight">
 
+          <h2>Is Animal</h2>
 
+          <img class="glyph-icon" src="/assets/glyphs/is_animal.png">
 
+          <p>$(n)entity</strong> → $(n)boolean</strong><br>Pops an entity and returns true if it is classified as an animal.</p>
 
+        </div>
+      
 
+        <div class="glyph-spotlight">
 
+          <h2>Is Hostile</h2>
 
+          <img class="glyph-icon" src="/assets/glyphs/is_hostile.png">
 
+          <p>$(n)entity</strong> → $(n)boolean</strong><br>Pops an entity and returns true if it is classified as hostile (monster).</p>
 
+        </div>
+      
 
+        <div class="glyph-spotlight">
 
+          <h2>Is Item</h2>
 
+          <img class="glyph-icon" src="/assets/glyphs/is_item.png">
 
+          <p>$(n)entity</strong> → $(n)boolean</strong><br>Pops and entity and returns true if it is classified as an Item entity.</p>
 
+        </div>
+      
 
+        <div class="glyph-spotlight">
 
-  </div>
+          <h2>Is Player</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/self.png">
+
+          <p>$(n)entity</strong> → $(n)boolean</strong><br>Pops an entity and returns true if it is classified as a player.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Is Living</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/is_living.png">
+
+          <p>$(n)entity</strong> → $(n)boolean</strong><br>Pops an entity and returns true if it is classified as a ‘living entity’.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Is Mob</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/is_mob.png">
+
+          <p>$(n)entity</strong> → $(n)boolean</strong><br>Pops an entity and returns true if it is classified as a mob.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Zone Entity</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/self.png">
+
+          <p>$(n)vec, num</strong> → $(n)list</strong><br>Pops a number and a position vector. Sweeps a sphere of radius equal to the popped number and returns a list of the entities found within that region. The list may be empty, and will never contain more than 256 elements.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Zone Animal</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/zone_animal.png">
+
+          <p>$(n)vec, num</strong> → $(n)list</strong><br>Pops a number and a position vector. Sweeps a sphere of radius equal to the popped number and returns a list of entities classified as animals found within that region. The list may be empty, and will never contain more than 256 elements.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Zone Hostile</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/zone_hostile.png">
+
+          <p>$(n)vec, num</strong> → $(n)list</strong><br>Pops a number and a position vector. Sweeps a sphere of radius equal to the popped number and returns a list of entities classified as hostile/monsters found within that region. The list may be empty, and will never contain more than 256 elements.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Zone Item</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/zone_item.png">
+
+          <p>$(n)vec, num</strong> → $(n)list</strong><br>Pops a number and a position vector. Sweeps a sphere of radius equal to the popped number and returns a list of entities classified as item entities found within that region. The list may be empty, and will never contain more than 256 elements.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Zone Player</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/zone_player.png">
+
+          <p>$(n)vec, num</strong> → $(n)list</strong><br>Pops a number and a position vector. Sweeps a sphere of radius equal to the popped number and returns a list of entities classified as players found within that region. The list may be empty, and will never contain more than 256 elements.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Zone Living</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/zone_living.png">
+
+          <p>$(n)vec, num</strong> → $(n)list</strong><br>Pops a number and a position vector. Sweeps a sphere of radius equal to the popped number and returns a list of entities classified as ‘living entities’ found within that region. The list may be empty, and will never contain more than 256 elements.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Zone Not Animal</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/zone_not_animal.png">
+
+          <p>$(n)vec, num</strong> → $(n)list</strong><br>Pops a number and a position vector. Sweeps a sphere of radius equal to the popped number and returns a list of entities not classified as animals found within that region. The list may be empty, and will never contain more than 256 elements.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Zone Not Hostile</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/zone_not_hostile.png">
+
+          <p>$(n)vec, num</strong> → $(n)list</strong><br>Pops a number and a position vector. Sweeps a sphere of radius equal to the popped number and returns a list of entities not classified as hostile/monsters found within that region. The list may be empty, and will never contain more than 256 elements.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Zone Not Item</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/zone_not_item.png">
+
+          <p>$(n)vec, num</strong> → $(n)list</strong><br>Pops a number and a position vector. Sweeps a sphere of radius equal to the popped number and returns a list of entities not classified as item entities found within that region. The list may be empty, and will never contain more than 256 elements.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Zone Not Player</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/zone_not_player.png">
+
+          <p>$(n)vec, num</strong> → $(n)list</strong><br>Pops a number and a position vector. Sweeps a sphere of radius equal to the popped number and returns a list of entities not classified as players found within that region. The list may be empty, and will never contain more than 256 elements.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Zone Not Living</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/zone_not_living.png">
+
+          <p>$(n)vec, num</strong> → $(n)list</strong><br>Pops a number and a position vector. Sweeps a sphere of radius equal to the popped number and returns a list of entities not classified as ‘living entities’ found within that region. The list may be empty, and will never contain more than 256 elements.</p>
+
+        </div>
+      
 
 </div>
 

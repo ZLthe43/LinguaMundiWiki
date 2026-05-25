@@ -112,6 +112,18 @@ function resolveGlyph(glyph) {
   return ""
 }
 
+/// ---- GLYPH TITLE RESOLVER ----
+function formatGlyphTitle(title) {
+  if (!title) return "Unknown Glyph"
+
+  const parts = title.split(".")
+  const raw = parts[parts.length - 1]
+
+  return raw
+    .replace(/_/g, " ")
+    .replace(/\b\w/g, c => c.toUpperCase())
+}
+
 // ---- ICON RESOLVER ----
 function resolveIcon(icon) {
   if (!icon) return ""
@@ -200,28 +212,28 @@ function renderEntry(entry, entries, currentKey) {
     </h1>
 
     ${(entry.pages || [])
-      .map(p => {
-        if (p.type === "patchouli:text") {
-          return `<p>${formatPatchouli(p.text, entries)}</p>`
-        }
-        return ""
+  .map(p => {
+    if (p.type === "patchouli:text") {
+      return `<p>${formatPatchouli(p.text, entries)}</p>`
+    }
 
-        if (page.type === "lingua_mundi:glyph_spotlight") {
-          return `
-            <div class="glyph-spotlight">
+    if (p.type === "lingua_mundi:glyph_spotlight") {
+      return `
+        <div class="glyph-spotlight">
 
-              <h2>${formatGlyphTitle(page.title)}</h2>
+          <h2>${formatGlyphTitle(p.title)}</h2>
 
-              <img class="glyph-icon" src="${resolveGlyph(page.glyph)}">
+          <img class="glyph-icon" src="${resolveGlyph(p.glyph)}">
 
-              <p>${formatPatchouli(page.text, entries)}</p>
+          <p>${formatPatchouli(p.text, entries)}</p>
 
-            </div>
-          `
-         }
-      })
-      .join("\n")}
-  </div>
+        </div>
+      `
+    }
+
+    return ""
+  })
+  .join("\n")}
 
 </div>
 

@@ -30,26 +30,225 @@
 
     <p>These glyphs manipulate the capsum itself. More often than not, they do not modify species at all, just rearranging them on the stack. In many instances, these glyphs act on generic species, in these cases these species will be denoted with an uppercase letter of the Latin alphabet.</p>
 
+        <div class="glyph-spotlight">
 
+          <h2>Swap</h2>
 
+          <img class="glyph-icon" src="/assets/glyphs/swap.png">
 
+          <p>$(n)B, A</strong> → $(n)A, B</strong><br>Swaps the species at the head with the species below it.</p>
 
+        </div>
+      
 
+        <div class="glyph-spotlight">
 
+          <h2>Swap Ends</h2>
 
+          <img class="glyph-icon" src="/assets/glyphs/swap_ends.png">
 
+          <p>$(n)D, …, A</strong> → $(n)A, …, D</strong><br>Swaps the ends of the capsum, with the head going to the end, and vice versa.</p>
 
+        </div>
+      
 
+        <div class="glyph-spotlight">
 
+          <h2>Dup</h2>
 
+          <img class="glyph-icon" src="/assets/glyphs/dup.png">
 
+          <p>$(n)B, A</strong> → $(n)B, A, A</strong><br>Duplicates the species at the head of the capsum.</p>
 
+        </div>
+      
 
+        <div class="glyph-spotlight">
 
+          <h2>Drop</h2>
 
+          <img class="glyph-icon" src="/assets/glyphs/drop.png">
 
+          <p>$(n)B, A</strong> → $(n)B</strong><br>Removes the head of the capsum and does not return anything at all.</p>
 
-  </div>
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Tuck</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/tuck.png">
+
+          <p>$(n)B, A</strong> → $(n)A, B, A</strong><br>Takes the species at the head of the capsum, and duplicates it, placing it below the species below the head in the pattern shown above.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Over</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/over.png">
+
+          <p>$(n)B, A</strong> → $(n)B, A, B</strong><br>Duplicates the species below the head onto the head, preserving the original two species.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Nip</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/nip.png">
+
+          <p>$(n)B, A</strong> → $(n)A</strong><br>Pops the species below the head, returning nothing.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Fish</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/fish.png">
+
+          <p>$(n)number</strong> → $(n)A</strong><br>Pops the species at the place, counting down from the head, corresponding to the number popped by the glyph<br><br>eg. 2 → species at the 2nd place, the one just below the head.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Peek Fish</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/peek_fish.png">
+
+          <p>$(n)number</strong> → $(n)A</strong><br>Similar to Fish, except the selected species is not popped, but just cloned, with the clone being placed onto the head instead.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Drop At</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/drop_at.png">
+
+          <p>$(n)number</strong> → <br>Pops the object at the place, counting down from the head corresponding to the number popped by the glyph.<br><br>eg. 2 → ; would pop the species at the 2nd place (just below the head), returning nothing.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Push To</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/push_to.png">
+
+          <p>$(n)A, number</strong> →<br>Pops species A and places it in the place, counting from the head, corresponding to the number popped by the glyph.<br><br>Eg. $(n)C, B, A, 2</strong> → $(n)C, A, B</strong> (A is now at the 2nd place)</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Dup To</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/dup_to.png">
+
+          <p>$(n)A, number</strong> →<br>Pops species A and places it in the place, counting from the head, corresponding to the number popped by the glyph. It then restores A at the head, preventing consumption.<br><br>eg. $(n)C, B, A, 2</strong> → $(n)C, A, B, A</strong> (A is now at the 2nd place without counting the head)</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Swap2</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/swap2.png">
+
+          <p>$(n)D, C, B, A</strong> → $(n)B, A, D C</strong><br>Swaps the top two pairs of species with each other. Preserves order within the pairs.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Dup2</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/dup2.png">
+
+          <p>$(n)B, A</strong> → $(n)B, A, B, A</strong><br>Duplicates the top two species, preserving the order within the pair.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Drop2</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/drop2.png">
+
+          <p>$(n)B, A</strong> → <br>Pops the top two species, returning nothing.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Clock Rot</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/clock_rot.png">
+
+          <p>$(n)C, B, A</strong> → $(n)B, A, C</strong><br>Pops the third species and pushes it to the head, preserving the order of the head and the subsequent species. In short: the third species goes to the head.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Counter Rot</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/counter_rot.png">
+
+          <p>$(n)C, B, A</strong> → $(n)A, C, B</strong><br>Pops the head and pushes it onto the third place, preserving the order of the (originally) second and third species. In short: the head goes to the third place.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Mass Dup</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/mass_dup.png">
+
+          <p>$(n)A, number</strong> → $(n)A, A, …</strong><br>Duplicates the species below the head so its quantity matches the popped number<br><br>eg. $(n)A, 3</strong> → $(n)A, A, A</strong></p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Stack Size</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/stack_size.png">
+
+          <p>→ $(n)number</strong><br>Pushes onto the capsum a number corresponding to the number of elements held within.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Print</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/print.png">
+
+          <p>$(n)A</strong> →<br>Prints the head of the capsum onto a text message viewable only by the caster.</p>
+
+        </div>
+      
 
 </div>
 

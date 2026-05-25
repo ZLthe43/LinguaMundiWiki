@@ -30,12 +30,71 @@
 
     <p>The following glyphs affect the spell’s core functioning, and are directly related to the cursorium’s execution. They are useful for gating and delaying the cursorium so glyphs run precisely when casters need them to.</p>
 
+        <div class="glyph-spotlight">
 
+          <h2>Wait Input</h2>
 
+          <img class="glyph-icon" src="/assets/glyphs/wait_input.png">
 
+          <p>→<br>Pauses the spell until an input is pushed onto the capsum. Useful for gating effects until after projectiles impact a target.</p>
 
+        </div>
+      
 
-  </div>
+        <div class="glyph-spotlight">
+
+          <h2>Wait Ticks</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/wait_ticks.png">
+
+          <p>$(n)number</strong> →<br>Pauses the spell for the ticks specified by the provided number.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Stop</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/stop.png">
+
+          <p>→<br>Stops a spell from executing any glyphs on the cursorium after this one.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Expect Pos</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/expect_pos.png">
+
+          <p>$(n)result</strong> → $(n)vector</strong><br>Reads a result expecting a vector. If found, returns the vector contained in the result, otherwise ends the spell’s execution.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Expect Entity</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/expect_entity.png">
+
+          <p>$(n)result</strong> → $(n)entity</strong><br>Reads a result expecting an entity. If found, returns the entity contained in the result, otherwise ends the spell’s execution.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Get Computation</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/get_computation.png">
+
+          <p>→ $(n)number</strong><br>Pushes onto the capsum a number corresponding to the remaining computation capacity of a casting item (computation for this glyph already deducted).</p>
+
+        </div>
+      
 
 </div>
 

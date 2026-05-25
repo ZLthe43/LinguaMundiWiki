@@ -30,12 +30,71 @@
 
     <p>This section will treat the glyphs involving quotation species. Quotation species are at their core lists of glyphs which can be stored on the stack to cast later, or cast only if some condition is met. They are useful for compressing spells with repeating sets of glyphs, or for gating functionality on some condition.</p>
 
+        <div class="glyph-spotlight">
 
+          <h2>Open Quote</h2>
 
+          <img class="glyph-icon" src="/assets/glyphs/open_quote.png">
 
+          <p>→<br>Serves as a sort of operator that tells the spell to add each glyph in the cursorium after this one onto a quotation species. Glyphs are added in the order they are encountered, similar to the cursorium.</p>
 
+        </div>
+      
 
-  </div>
+        <div class="glyph-spotlight">
+
+          <h2>Close Quote</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/close_quote.png">
+
+          <p>→<br>A pair operator for open quote. Tells a spell to stop adding glyphs to a quotation species and to push it onto the capsum. Once on the capsum, the quote can never be modified.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Call Quote</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/call_quote.png">
+
+          <p>$(n)quote</strong> →<br>Places the quote’s glyphs at the front of the cursorium and runs them. Effectively tells the spell to execute the glyphs contained in a quote in order.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Call If</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/call_if.png">
+
+          <p>$(n)quote, bool</strong> →<br>Calls the quote only if the boolean at the head of the stack has value true. Useful for gating functionality behind some condition.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Call While</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/call_while.png">
+
+          <p>$(n)quote, bool</strong> →<br>Calls the quote depending on whether a popped boolean has value true. Once the quote has finished executing, the glyph again pops the head of the stack and calls the quote again if it finds a true value. The loop continues until the value is false, or the spell meets some error.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Call For Each</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/call_for_each.png">
+
+          <p>$(n)quote, list</strong> →<br>For each species on the list, pushes the species onto the capsum and then calls the quote. This is repeated for each species in the list. Essentially allows practitioners to use a ‘for-each’ loop.</p>
+
+        </div>
+      
 
 </div>
 

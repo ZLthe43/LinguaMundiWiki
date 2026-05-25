@@ -30,18 +30,137 @@
 
     <p>Lists are a way to conveniently store species on the stack. A list species is at its core, an ordered container of other species. Lists are able to hold any species imaginable, and do not prevent practitioners from mixing the types of species present in an individual list.</p>
 
+        <div class="glyph-spotlight">
 
+          <h2>List From N</h2>
 
+          <img class="glyph-icon" src="/assets/glyphs/list_from_n.png">
 
+          <p>$(n)A, B, C, num</strong> → $(n)list</strong><br>Reads the number at the head and creates a list of matching length from species on the capsum. The list is ordered such that species added to the capsum earlier are further ahead on the returned list.<br>eg. A, B, C, 3 → list of A, B and C, in that order</p>
 
+        </div>
+      
 
+        <div class="glyph-spotlight">
 
+          <h2>Append</h2>
 
+          <img class="glyph-icon" src="/assets/glyphs/append.png">
 
+          <p>$(n)list, A</strong> → $(n)list</strong><br>Adds the species at the head to the end of the list below the head. If given a list at the head, that list is added to the end of the list below the head, preserving order in both lists.</p>
 
+        </div>
+      
 
+        <div class="glyph-spotlight">
 
-  </div>
+          <h2>Prepend</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/prepend.png">
+
+          <p>$(n)list, A</strong> → $(n)list</strong><br>Adds the species at the head to the start of the list below the head. If given a list at the head, that list is added at the front of the list below the head, preserving order in both lists.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Consolidate</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/consolidate.png">
+
+          <p>$(n)list</strong> → $(n)list</strong><br>Removes all null elements from a list. Useful for cleaning data a practitioner does not know to be fully composed of valid values.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Split Head</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/split_head.png">
+
+          <p>$(n)list</strong> → $(n)list</strong>, A<br>Pops a list, removes the element at the head, then pushes the resulting list and the element removed from the front of that list, in that order (the species removed from the list is at the head).</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Get Index</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/get_index.png">
+
+          <p>$(n)list, num</strong> → $(n)A</strong><br>Returns the element at the position of the list specified by the number at the head.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Set Index</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/set_index.png">
+
+          <p>$(n)list, A, num</strong> → $(n)list</strong><br>Replaces the element on the list at the position specified by the number at the head with the species below the head.<br>eg. list, A, 2 → list with 2nd element replaced by A</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Split At</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/split_at.png">
+
+          <p>$(n)list, num</strong> → $(n)list, list</strong><br>Splits a list by the number at the head. Returns a list with the elements up to the given number (the ‘left’ side), and a list with the elements after place denoted by the number (the ‘right’ side).<br>eg. list, 2 → list of first 2 elements, list of the remaining elements</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Insert At</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/insert_at.png">
+
+          <p>$(n)list, A, num</strong> → $(n)list</strong><br>Adds a given element at the place on a list specified by the number at the head. Does not delete existing elements, simply shifts them by a place.<br>eg. list, A, 3 → list with A at the 3rd place, where the original third place is now at the 4th place</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Remove At</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/remove_at.png">
+
+          <p>$(n)list, num</strong> → $(n)list</strong><br>Pops a list, removes the element at the place specified by the number, and then returns the resulting list. Does not leave a null value behind.<br>eg. list, 3 → list without its 3rd element</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Sublist</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/sublist.png">
+
+          <p>$(n)list, num, num</strong> → $(n)list</strong><br>Pops a list, selects the elements starting from the number below the head and ending at the number at the head.<br>eg. list, 1, 4 → list of elements starting at the 1st element and ending at the 3rd element</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>List Length</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/list_length.png">
+
+          <p>$(n)list|str</strong> → $(n)num</strong><br>Pops a list off the capsum and returns the number of elements it contains. Offers the same functionality for strings.</p>
+
+        </div>
+      
 
 </div>
 

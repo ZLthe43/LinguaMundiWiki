@@ -30,16 +30,115 @@
 
     <p>These glyphs are involved in manipulating boolean species, species that represent either true or false. Numerically, true and false can be expressed as 1 or 0. These species are important as they are used to gate functionality by condition; for further details see the section on <a href="#" class="wiki-link">Quotations</strong>.</p>
 
+        <div class="glyph-spotlight">
 
+          <h2>To Boolean</h2>
 
+          <img class="glyph-icon" src="/assets/glyphs/to_boolean.png">
 
+          <p>$(n)any</strong> → $(n)boolean</strong><br>Converts a species into the corresponding boolean. If fed a boolean, returns the boolean. Returns false if fed null, a number with value 0, or an empty list. For everything else, the glyph returns true.</p>
 
+        </div>
+      
 
+        <div class="glyph-spotlight">
 
+          <h2>Bool To Num</h2>
 
+          <img class="glyph-icon" src="/assets/glyphs/bool_to_num.png">
 
+          <p>$(n)boolean</strong> → $(n)number</strong><br>Returns either 0 or 1 depending on the value of the boolean at the head of the capsum.</p>
 
-  </div>
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Not</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/not.png">
+
+          <p>$(n)boolean</strong> → $(n)boolean</strong><br>Takes a boolean and returns the opposite value.<br>eg. False → True, or True → False</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>And</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/and.png">
+
+          <p>$(n)bool, bool</strong> → $(n)bool</strong><br>Pops two booleans, returns true only if both of the inputs have value true.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Or</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/or.png">
+
+          <p>$(n)bool, bool</strong> → $(n)bool</strong><br>Pops two booleans, returns true if at least one of the inputs has value true.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Xor</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/xor.png">
+
+          <p>$(n)bool, bool</strong> → $(n)bool</strong><br>Pops two booleans, returns true only if exactly one input is true, while the other is false.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Equal</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/equal.png">
+
+          <p>$(n)A, B</strong> → $(n)bool</strong><br>Pops two species, returns true if they are equal, otherwise returns false.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Compare Eq</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/compare_eq.png">
+
+          <p>$(n)num, num</strong> → $(n)bool</strong><br>Returns true if the number below the head is smaller than or equal to the number at the head.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>Compare</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/compare.png">
+
+          <p>$(n)num, num</strong> → $(n)bool</strong><br>Returns true if the number below the head is strictly smaller than the number at the head.</p>
+
+        </div>
+      
+
+        <div class="glyph-spotlight">
+
+          <h2>In Block</h2>
+
+          <img class="glyph-icon" src="/assets/glyphs/in_block.png">
+
+          <p>$(n)vector</strong> → $(n)boolean</strong><br>Checks the vector position fed into the glyph. Returns true if the corresponding position is inside a block (solid), otherwise returns false.</p>
+
+        </div>
+      
 
 </div>
 
