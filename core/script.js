@@ -25,7 +25,27 @@ function getAllJsonFiles(dir) {
   return results
 }
 
-// ---- FORMAT PATCHOULI ----
+// ---- CATEGORY HELPERS (NEW) ----
+function getCategoryId(cat) {
+  return typeof cat === "string" ? cat : cat.id
+}
+
+function getCategoryTitle(cat) {
+  if (typeof cat === "object" && cat.title) {
+    return cat.title
+  }
+
+  const id = getCategoryId(cat)
+
+  const parts = id.split(":")
+  const name = parts[1] || id
+
+  return name
+    .replace(/_/g, " ")
+    .replace(/\b\w/g, c => c.toUpperCase())
+}
+
+// ---- PATCHOULI FORMATTER ----
 function formatPatchouli(text, entries) {
   if (!text) return ""
 
@@ -34,7 +54,6 @@ function formatPatchouli(text, entries) {
 
   while (i < text.length) {
 
-    // breaks
     if (text.startsWith("$(br2)", i)) {
       out += "<br><br>"
       i += 6
@@ -47,7 +66,6 @@ function formatPatchouli(text, entries) {
       continue
     }
 
-    // bold
     if (text.startsWith("$(l)", i)) {
       out += "<strong>"
       i += 4
@@ -60,7 +78,7 @@ function formatPatchouli(text, entries) {
       continue
     }
 
-    // 🔗 LINK $(l:path)
+    // LINK $(l:path)
     if (text.startsWith("$(l:", i)) {
       let end = text.indexOf(")", i)
       let target = text.slice(i + 4, end)
@@ -106,36 +124,26 @@ function toKey(relative) {
   return relative.replace(".json", "").replace(/\\/g, "/")
 }
 
-// ---- FORMAT CATEGORIES ----
-function formatCategory(cat) {
-  if (!cat) return "Unknown"
-
-  // split namespace + id
-  const parts = cat.split(":")
-  const name = parts[1] || cat
-
-  return "On " + name
-    .replace(/_/g, " ")
-    .replace(/\b\w/g, c => c.toUpperCase())
-}
-
 // ---- SIDEBAR ----
 function buildSidebar(entries, currentKey) {
   const grouped = {}
 
   for (const e of entries) {
-    if (!grouped[e.category]) grouped[e.category] = []
-    grouped[e.category].push(e)
+    const catId = getCategoryId(e.category)
+    if (!grouped[catId]) grouped[catId] = []
+    grouped[catId].push(e)
   }
 
   let html = ""
 
-  for (const cat in grouped) {
-    html += `<h4>${formatCategory(cat)}</h4>`
+  for (const catId in grouped) {
 
-    for (const e of grouped[cat]) {
+    const title = getCategoryTitle(grouped[catId][0].category)
+
+    html += `<h4>${title}</h4>`
+
+    for (const e of grouped[catId]) {
       const active = e.key === currentKey ? "active" : ""
-
       html += `<a class="${active}" href="${e.url}">${e.name}</a>`
     }
   }
@@ -206,8 +214,9 @@ function generateIndex(entries) {
   const grouped = {}
 
   for (const e of entries) {
-    if (!grouped[e.category]) grouped[e.category] = []
-    grouped[e.category].push(e)
+    const catId = getCategoryId(e.category)
+    if (!grouped[catId]) grouped[catId] = []
+    grouped[catId].push(e)
   }
 
   let html = `
@@ -224,13 +233,16 @@ function generateIndex(entries) {
 <div class="sidebar-like">
 `
 
-  for (const cat in grouped) {
+  for (const catId in grouped) {
+
+    const title = getCategoryTitle(grouped[catId][0].category)
+
     html += `<div class="category">
-      <div class="category-title">${cat}</div>
+      <div class="category-title">${title}</div>
     `
 
-    for (const e of grouped[cat]) {
-      html += `<div class="category-title">${formatCategory(cat)}</div>`
+    for (const e of grouped[catId]) {
+      html += `<a href="${e.url}">${e.name}</a>`
     }
 
     html += `</div>`
@@ -246,28 +258,25 @@ const files = getAllJsonFiles(ENTRIES_DIR)
 
 const ENTRIES = []
 
-// PASS 1: collect metadata
+// PASS 1
 for (const file of files) {
   const raw = fs.readFileSync(file, "utf8")
   const entry = JSON.parse(raw)
 
   const relative = path.relative(ENTRIES_DIR, file)
 
-  const key = toKey(relative)
-  const url = toUrl(relative)
-
   ENTRIES.push({
     name: entry.name,
     category: entry.category,
     icon: entry.icon,
     file: relative,
-    key,
-    url,
+    key: toKey(relative),
+    url: toUrl(relative),
     pages: entry.pages
   })
 }
 
-// PASS 2: render pages
+// PASS 2
 for (const entry of ENTRIES) {
   const html = renderEntry(entry, ENTRIES, entry.key)
 
