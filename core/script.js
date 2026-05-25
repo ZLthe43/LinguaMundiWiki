@@ -98,6 +98,20 @@ function formatPatchouli(text, entries) {
   return out
 }
 
+// ---- GLYPH RESOLVER ----
+function resolveGlyph(glyph) {
+  if (!glyph) return ""
+
+  const [ns, name] = glyph.split(":")
+
+  // only your mod glyphs
+  if (ns === "lingua_mundi") {
+    return `/assets/glyphs/${name}.png`
+  }
+
+  return ""
+}
+
 // ---- ICON RESOLVER ----
 function resolveIcon(icon) {
   if (!icon) return ""
@@ -191,9 +205,22 @@ function renderEntry(entry, entries, currentKey) {
           return `<p>${formatPatchouli(p.text, entries)}</p>`
         }
         return ""
+
+        if (page.type === "lingua_mundi:glyph_spotlight") {
+          return `
+            <div class="glyph-spotlight">
+
+              <h2>${formatGlyphTitle(page.title)}</h2>
+
+              <img class="glyph-icon" src="${resolveGlyph(page.glyph)}">
+
+              <p>${formatPatchouli(page.text, entries)}</p>
+
+            </div>
+          `
+         }
       })
       .join("\n")}
-
   </div>
 
 </div>

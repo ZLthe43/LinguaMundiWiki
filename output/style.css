@@ -175,3 +175,23 @@ p {
 .wiki-link:hover {
   text-decoration: underline;
 }
+
+/* GLYPHS!!!!!!!!!! */
+.glyph-spotlight {
+  border: 1px solid #333;
+  padding: 12px;
+  margin: 20px 0;
+  background: #111;
+}
+
+.glyph-spotlight h2 {
+  margin: 0 0 10px 0;
+}
+
+.glyph-icon {
+  width: 48px;
+  height: 48px;
+  image-rendering: pixelated;
+  display: block;
+  margin-bottom: 10px;
+}
