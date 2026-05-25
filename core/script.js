@@ -142,6 +142,36 @@ function formatGlyphTitle(title) {
     .replace(/\b\w/g, c => c.toUpperCase())
 }
 
+// ---- EXTRA ICON STUFF... ----
+function resolveMinecraftItem(name) {
+  return `/assets/minecraft/items/${name}.png`
+}
+
+function resolveMinecraftFallback(name) {
+  return `https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.1/assets/minecraft/textures/item/${name}.png`
+}
+
+function renderIcon(icon) {
+  if (!icon) return ""
+
+  const [ns, name] = icon.split(":")
+
+  if (ns === "minecraft") {
+    return `
+      <img class="icon"
+        src="/assets/minecraft/${name}.png"
+        onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.1/assets/minecraft/textures/item/${name}.png'"
+      >
+    `
+  }
+
+  if (ns === "lingua_mundi") {
+    return `<img class="icon" src="/assets/lingua_mundi/${name}.png">`
+  }
+
+  return ""
+}
+
 // ---- ICON RESOLVER ----
 function resolveIcon(icon) {
   if (!icon) return ""
@@ -153,9 +183,11 @@ function resolveIcon(icon) {
   }
 
   if (ns === "minecraft") {
-    return `https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.1/assets/minecraft/textures/item/${name}.png`
-  }
+    const local = `/assets/minecraft/${name}.png`
+    const fallback = `https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.1/assets/minecraft/textures/item/${name}.png`
 
+    return `${local}`
+  }
   return ""
 }
 
@@ -225,7 +257,7 @@ function renderEntry(entry, entries, currentKey) {
   <div class="content">
 
     <h1>
-      <img class="icon" src="${resolveIcon(entry.icon)}">
+      <img class="icon" src="${renderIcon(entry.icon)}">
       ${entry.name}
     </h1>
 
