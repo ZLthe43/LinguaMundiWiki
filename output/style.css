@@ -1,9 +1,11 @@
 body {
   margin: 0;
   font-family: monospace;
-  background: #111;
+  background: hwb(0 7% 93%);
   color: #ddd;
 }
+
+/* ---------- TEXT ---------- */
 
 h1 {
   display: flex;
@@ -22,44 +24,153 @@ p {
   margin-bottom: 12px;
 }
 
+/* ---------- LAYOUT ---------- */
+
 .layout {
   display: flex;
+  height: 100vh;
 }
 
+/* ---------- SIDEBAR ---------- */
+
 .sidebar {
-  width: 220px;
+  width: 240px;
   background: #1a1a1a;
   padding: 10px;
   overflow-y: auto;
   transition: width 0.2s ease;
+  border-right: 1px solid #222;
 }
 
+/* collapsed state */
 .sidebar.collapsed {
   width: 50px;
 }
 
+/* toggle button */
 .sidebar .toggle {
   background: #333;
   color: white;
   border: none;
-  padding: 5px;
+  padding: 6px;
   cursor: pointer;
   margin-bottom: 10px;
+  width: 100%;
 }
 
+/* hide content when collapsed */
 .sidebar.collapsed h3,
+.sidebar.collapsed h4,
 .sidebar.collapsed a,
-.sidebar.collapsed #sidebar-sections {
+.sidebar.collapsed .category {
   display: none;
 }
+
+/* ---------- TREE STRUCTURE ---------- */
+
+.category {
+  margin-bottom: 8px;
+}
+
+.sidebar h4 {
+  margin: 10px 0 5px;
+  font-size: 12px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* entries container */
+.category-items {
+  margin-left: 10px;
+  border-left: 1px solid #2a2a2a;
+  padding-left: 8px;
+}
+
+/* entries */
+.sidebar a {
+  display: block;
+  padding: 3px 6px;
+  margin: 2px 0;
+  color: #ccc;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.sidebar a:hover {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+/* ---------- CONTENT ---------- */
 
 .content {
   flex: 1;
   padding: 20px;
+  overflow-y: auto;
 }
 
 .icon {
   width: 24px;
   height: 24px;
   vertical-align: middle;
+}
+
+/* ---------- SCROLLBAR ---------- */
+
+.sidebar {
+  scrollbar-width: thin;
+  scrollbar-color: #333 #1a1a1a;
+}
+
+/* ---------- OPTIONAL: CATEGORY COLLAPSE STATE ---------- */
+
+.category.collapsed .category-items {
+  display: none;
+}
+
+.category {
+  margin-bottom: 10px;
+}
+
+.category-title {
+  font-size: 12px;
+  color: #888;
+  text-transform: uppercase;
+  margin: 6px 0;
+}
+
+.category a {
+  display: block;
+  padding: 4px 6px;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.category a:hover {
+  background: #2a2a2a;
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar a.active {
+  background: #333;
+  font-weight: bold;
+  border-left: 3px solid #777;
+  padding-left: 6px;
+}
+
+.wiki-link {
+  color: #8ab4ff;
+  text-decoration: none;
+}
+
+.wiki-link:hover {
+  text-decoration: underline;
 }

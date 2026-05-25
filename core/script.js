@@ -1,115 +1,11 @@
 const fs = require("fs")
 const path = require("path")
 
-// ---- FILES ----
-// for later usage
-const files = getAllJsonFiles(ENTRIES_DIR)
-
-for (const file of files) {
-  const raw = fs.readFileSync(file, "utf8")
-  const entry = JSON.parse(raw)
-
-  const relative = path.relative(ENTRIES_DIR, file)
-
-  // store metadata for navigation
-  ENTRIES.push({
-    name: entry.name,
-    category: entry.category,
-    file: relative,
-    url: "/" + relative.replace(".json", ".html").replace(/\\/g, "/")
-  })
-
-  const html = renderEntry(entry, ENTRIES)
-
-  const outputFile = path.join(
-    OUTPUT_DIR,
-    relative.replace(".json", ".html")
-  )
-
-  fs.mkdirSync(path.dirname(outputFile), { recursive: true })
-  fs.writeFileSync(outputFile, html)
-
-  console.log("Generated:", outputFile)
-}
-
 // ---- CONFIG ----
 const ENTRIES_DIR = path.join(__dirname, "../entries")
 const OUTPUT_DIR = path.join(__dirname, "../output")
 
-// ---- PATCHOULI FORMATTER ----
-function formatPatchouli(text) {
-  if (!text) return ""
-
-  let out = ""
-  let i = 0
-
-  let bold = false
-
-  while (i < text.length) {
-
-    // $(br2)
-    if (text.slice(i, i + 6) === "$(br2)") {
-      out += "<br><br>"
-      i += 6
-      continue
-    }
-
-    // $(br)
-    if (text.slice(i, i + 5) === "$(br)") {
-      out += "<br>"
-      i += 5
-      continue
-    }
-
-    // $(l)
-    if (text.slice(i, i + 4) === "$(l)") {
-      bold = true
-      out += "<strong>"
-      i += 4
-      continue
-    }
-
-    // $()
-    if (text.slice(i, i + 3) === "$()") {
-      if (bold) {
-        out += "</strong>"
-        bold = false
-      } else {
-        out += ":"
-      }
-      i += 3
-      continue
-    }
-
-    // normal character
-    out += text[i]
-    i++
-  }
-
-  return out
-}
-
-
-// ---- ICON RESOLVER ----
-function resolveIcon(icon) {
-  if (!icon) return ""
-
-  const [ns, name] = icon.split(":")
-
-  // custom mod icons
-  if (ns === "lingua_mundi") {
-    return `/assets/lingua_mundi/${name}.png`
-  }
-
-  // vanilla minecraft icons
-  if (ns === "minecraft") {
-    return `https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.1/assets/minecraft/textures/item/${name}.png`
-  }
-
-  return ""
-}
-
-// ---- LOAD ALL JSON FILES RECURSIVELY ----
+// ---- LOAD FILES ----
 function getAllJsonFiles(dir) {
   let results = []
 
@@ -129,67 +25,89 @@ function getAllJsonFiles(dir) {
   return results
 }
 
-// ---- RENDER ENTRY ----
-function renderEntry(entry, entries) {
-  const sidebarHTML = buildSidebar(entries)
-  return `
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>${entry.name}</title>
-  <link rel="stylesheet" href="/style.css">
-</head>
+// ---- FORMAT PATCHOULI ----
+function formatPatchouli(text, entries) {
+  if (!text) return ""
 
-<body>
+  let out = ""
+  let i = 0
 
-<div class="layout">
+  while (i < text.length) {
 
-  <!-- SIDEBAR -->
-  <div class="sidebar" id="sidebar">
-    <button class="toggle" onclick="toggleSidebar()">☰</button>
+    // breaks
+    if (text.startsWith("$(br2)", i)) {
+      out += "<br><br>"
+      i += 6
+      continue
+    }
 
-    <h3>Index</h3>
-    <div id="sidebar-sections">
-      ${sidebarHTML}
-    </div>
-  </div>
+    if (text.startsWith("$(br)", i)) {
+      out += "<br>"
+      i += 5
+      continue
+    }
 
-  <!-- MAIN CONTENT -->
-  <div class="content">
+    // bold
+    if (text.startsWith("$(l)", i)) {
+      out += "<strong>"
+      i += 4
+      continue
+    }
 
-    <h1>
-      <img class="icon" src="${resolveIcon(entry.icon)}">
-      ${entry.name}
-    </h1>
+    if (text.startsWith("$()", i)) {
+      out += "</strong>"
+      i += 3
+      continue
+    }
 
-    ${entry.pages
-      .map(page => {
-        if (page.type === "patchouli:text") {
-          return `<p>${formatPatchouli(page.text)}</p>`
-        }
-        return ""
-      })
-      .join("\n")}
+    // 🔗 LINK $(l:path)
+    if (text.startsWith("$(l:", i)) {
+      let end = text.indexOf(")", i)
+      let target = text.slice(i + 4, end)
 
-  </div>
+      const entry = entries.find(e => e.key === target)
+      const url = entry ? entry.url : "#"
 
-</div>
+      out += `<a href="${url}" class="wiki-link">`
+      i = end + 1
+      continue
+    }
 
-<!-- TOGGLE SCRIPT -->
-<script>
-function toggleSidebar() {
-  document.getElementById("sidebar").classList.toggle("collapsed")
-}
-</script>
+    out += text[i]
+    i++
+  }
 
-</body>
-</html>
-`
+  return out
 }
 
-// ---- RENDER SIDEBAR ----
-function buildSidebar(entries) {
+// ---- ICON RESOLVER ----
+function resolveIcon(icon) {
+  if (!icon) return ""
+
+  const [ns, name] = icon.split(":")
+
+  if (ns === "lingua_mundi") {
+    return `/assets/lingua_mundi/${name}.png`
+  }
+
+  if (ns === "minecraft") {
+    return `https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.1/assets/minecraft/textures/item/${name}.png`
+  }
+
+  return ""
+}
+
+// ---- URL HELPERS ----
+function toUrl(relative) {
+  return "/" + relative.replace(".json", "/index.html").replace(/\\/g, "/")
+}
+
+function toKey(relative) {
+  return relative.replace(".json", "").replace(/\\/g, "/")
+}
+
+// ---- SIDEBAR ----
+function buildSidebar(entries, currentKey) {
   const grouped = {}
 
   for (const e of entries) {
@@ -203,15 +121,82 @@ function buildSidebar(entries) {
     html += `<h4>${cat}</h4>`
 
     for (const e of grouped[cat]) {
-      html += `<a href="${e.url}">${e.name}</a>`
+      const active = e.key === currentKey ? "active" : ""
+
+      html += `<a class="${active}" href="${e.url}">${e.name}</a>`
     }
   }
 
   return html
 }
 
-// ---- INDEX ----
+// ---- RENDER ENTRY ----
+function renderEntry(entry, entries, currentKey) {
+  const sidebarHTML = buildSidebar(entries, currentKey)
+
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>${entry.name}</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+  <div class="sidebar" id="sidebar">
+    <button class="toggle" onclick="toggleSidebar()">☰</button>
+
+    <h3>Index</h3>
+
+    <div id="sidebar-sections">
+      ${sidebarHTML}
+    </div>
+  </div>
+
+  <div class="content">
+
+    <h1>
+      <img class="icon" src="${resolveIcon(entry.icon)}">
+      ${entry.name}
+    </h1>
+
+    ${(entry.pages || [])
+      .map(p => {
+        if (p.type === "patchouli:text") {
+          return `<p>${formatPatchouli(p.text, entries)}</p>`
+        }
+        return ""
+      })
+      .join("\n")}
+
+  </div>
+
+</div>
+
+<script>
+function toggleSidebar() {
+  document.getElementById("sidebar").classList.toggle("collapsed")
+}
+</script>
+
+</body>
+</html>
+`
+}
+
+// ---- INDEX PAGE ----
 function generateIndex(entries) {
+  const grouped = {}
+
+  for (const e of entries) {
+    if (!grouped[e.category]) grouped[e.category] = []
+    grouped[e.category].push(e)
+  }
+
   let html = `
 <!DOCTYPE html>
 <html>
@@ -223,19 +208,22 @@ function generateIndex(entries) {
 <body>
 
 <h1>Wiki Index</h1>
-<ul>
+<div class="sidebar-like">
 `
 
-  for (const e of entries) {
-    html += `<li><a href="${e.url}">${e.name}</a> — ${e.category}</li>`
+  for (const cat in grouped) {
+    html += `<div class="category">
+      <div class="category-title">${cat}</div>
+    `
+
+    for (const e of grouped[cat]) {
+      html += `<a href="${e.url}">${e.name}</a>`
+    }
+
+    html += `</div>`
   }
 
-  html += `
-</ul>
-
-</body>
-</html>
-`
+  html += `</div></body></html>`
 
   return html
 }
@@ -243,16 +231,36 @@ function generateIndex(entries) {
 // ---- MAIN ----
 const files = getAllJsonFiles(ENTRIES_DIR)
 
+const ENTRIES = []
+
+// PASS 1: collect metadata
 for (const file of files) {
   const raw = fs.readFileSync(file, "utf8")
   const entry = JSON.parse(raw)
 
-  const html = renderEntry(entry)
-
   const relative = path.relative(ENTRIES_DIR, file)
+
+  const key = toKey(relative)
+  const url = toUrl(relative)
+
+  ENTRIES.push({
+    name: entry.name,
+    category: entry.category,
+    icon: entry.icon,
+    file: relative,
+    key,
+    url,
+    pages: entry.pages
+  })
+}
+
+// PASS 2: render pages
+for (const entry of ENTRIES) {
+  const html = renderEntry(entry, ENTRIES, entry.key)
+
   const outputFile = path.join(
     OUTPUT_DIR,
-    relative.replace(".json", "/index.html")
+    entry.file.replace(".json", "/index.html")
   )
 
   fs.mkdirSync(path.dirname(outputFile), { recursive: true })
@@ -261,8 +269,7 @@ for (const file of files) {
   console.log("Generated:", outputFile)
 }
 
-console.log("Done.")
-
+// INDEX
 const indexHTML = generateIndex(ENTRIES)
 
 fs.writeFileSync(

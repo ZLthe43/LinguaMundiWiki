@@ -11,15 +11,16 @@
 
 <div class="layout">
 
-  <!-- SIDEBAR -->
   <div class="sidebar" id="sidebar">
     <button class="toggle" onclick="toggleSidebar()">☰</button>
 
     <h3>Index</h3>
-    <div id="sidebar-sections"></div>
+
+    <div id="sidebar-sections">
+      <h4>lingua_mundi:casting_items</h4><a class="" href="/casting_items/gem_upgrades/index.html">On Gem Upgrades</a><a class="" href="/casting_items/on_caps/index.html">On Caps</a><a class="" href="/casting_items/on_gems/index.html">On Gems</a><a class="" href="/casting_items/on_rods/index.html">On Rods</a><a class="" href="/casting_items/on_staves/index.html">On Staves</a><h4>lingua_mundi:computation_concepts</h4><a class="" href="/computation_concepts/computation_glyphs/index.html">On Computation Glyphs</a><a class="" href="/computation_concepts/effect_glyphs/index.html">On Effect Glyphs</a><a class="" href="/computation_concepts/on_capsum/index.html">On The Capsum</a><a class="" href="/computation_concepts/on_cursorium/index.html">On The Cursorium</a><h4>lingua_mundi:computation_specifics</h4><a class="" href="/computation_specifics/basics/index.html">Basics</a><a class="" href="/computation_specifics/capsum/index.html">Capsum</a><a class="" href="/computation_specifics/constants/index.html">Constants</a><a class="" href="/computation_specifics/entities/index.html">Entities</a><a class="" href="/computation_specifics/further_maths/index.html">Further Maths</a><a class="" href="/computation_specifics/lists/index.html">Lists</a><a class="" href="/computation_specifics/logic/index.html">Logic</a><a class="" href="/computation_specifics/maths/index.html">Maths</a><a class="" href="/computation_specifics/quotations/index.html">Quotations</a><a class="" href="/computation_specifics/spatial/index.html">Spatial</a><a class="" href="/computation_specifics/spell_context/index.html">Spell Context</a><a class="" href="/computation_specifics/strings/index.html">Strings</a><a class="" href="/computation_specifics/tagging/index.html">Tagging</a><h4>lingua_mundi:effect_specifics</h4><a class="" href="/effect_specifics/conjuration/index.html">Conjuration Magic</a><a class="" href="/effect_specifics/fire/index.html">Fire Magic</a><a class="" href="/effect_specifics/ice/index.html">Ice Magic</a><a class="" href="/effect_specifics/lightning/index.html">Lightning Magic</a><a class="" href="/effect_specifics/organic/index.html">Organic Magic</a><a class="" href="/effect_specifics/space/index.html">Space Magic</a><a class="" href="/effect_specifics/water/index.html">Water Magic</a><h4>lingua_mundi:fundamentals</h4><a class="" href="/fundamentals/casting_items/index.html">On Casting Items</a><a class="" href="/fundamentals/creating_enchantments/index.html">Creating Enchantments</a><a class="" href="/fundamentals/foreword/index.html">Foreword</a><a class="" href="/fundamentals/on_errors/index.html">On Errors</a><a class="" href="/fundamentals/on_glyphs/index.html">On Glyphs</a><a class="" href="/fundamentals/on_mana/index.html">On Mana</a><a class="" href="/fundamentals/on_materials/index.html">On Materials</a><a class="" href="/fundamentals/on_species/index.html">On Species</a><a class="active" href="/fundamentals/on_spellforms/index.html">On Spellforms</a><h4>lingua_mundi:tutorials</h4><a class="" href="/tutorials/block/index.html">Placing a Block</a><a class="" href="/tutorials/bounce/index.html">Chaining Projectiles</a><a class="" href="/tutorials/bow_arrow/index.html">Offset Casting</a><a class="" href="/tutorials/explosion/index.html">Casting an Explosion</a><a class="" href="/tutorials/firebolt/index.html">Casting a Firebolt</a><a class="" href="/tutorials/magazine/index.html">Using the Magazine</a><a class="" href="/tutorials/quotations/index.html">Using Quotations</a>
+    </div>
   </div>
 
-  <!-- MAIN CONTENT -->
   <div class="content">
 
     <h1>
@@ -28,16 +29,15 @@
     </h1>
 
     <p>Spellforms refer to the specific particular pertaining to an enchantment. Spellforms are particular in the sense that each spellform possesses its own accidents. The two primary accidents of a spellform are as follows: the capsum, a container of species described in certain texts as the “stack”, and the cursorium, a queue of instructions provenient from the </p>
-<p>enchantment’s Glyphs.<br><br>For further exploration on this topic, please refer to the section $(l:lingua_mundi:computation_concepts)Concepts in Computation:.</p>
+<p>enchantment’s Glyphs.<br><br>For further exploration on this topic, please refer to the section <a href="#" class="wiki-link">Concepts in Computation</strong>.</p>
 <p>When casting spellforms, it is important to take into account the time needed to cast the spell, as well as the time needed for the casting item to cool down. These two values are subject to the number of glyphs used in the enchantment, and the total complexity of these.<br><br>Note, this does not take into account the complexity and number of the glyphs actually </p>
 <p>executed, rather the total values based on glyphs inscribed on the slate. Even if loops cause hundreds of glyphs to be executed, if only ten glyphs are inscribed on the slate, then only those ten glyphs will be considered.<br><br>Refer to the next page for specific formulae.</p>
-<p>Let base casting time be $(o)Ct:, base cooldown time be $(o)Cd:, total complexity be $(o)k: and glyph count be $(o)n:.<br><br>$(o)Ct: = 7.5 x ($(o)k: - 3)^0.7 x $(o)n:^0.3, where $(o)k: - 3 is adjusted to always exceed or equal 0<br><br>$(o)Cd: = 5 x $(o)k:^0.4 x $(o)n:^0.6</p>
+<p>Let base casting time be $(o)Ct</strong>, base cooldown time be $(o)Cd</strong>, total complexity be $(o)k</strong> and glyph count be $(o)n</strong>.<br><br>$(o)Ct</strong> = 7.5 x ($(o)k</strong> - 3)^0.7 x $(o)n</strong>^0.3, where $(o)k</strong> - 3 is adjusted to always exceed or equal 0<br><br>$(o)Cd</strong> = 5 x $(o)k</strong>^0.4 x $(o)n</strong>^0.6</p>
 
   </div>
 
 </div>
 
-<!-- TOGGLE SCRIPT -->
 <script>
 function toggleSidebar() {
   document.getElementById("sidebar").classList.toggle("collapsed")
