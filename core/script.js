@@ -51,6 +51,8 @@ function formatPatchouli(text, entries) {
 
   let out = ""
   let i = 0
+  let bold = false
+  let underline = false
 
   while (i < text.length) {
 
@@ -73,7 +75,16 @@ function formatPatchouli(text, entries) {
     }
 
     if (text.startsWith("$()", i)) {
-      out += "</strong>"
+      if (bold) {
+        out += "</strong>"
+        bold = false
+      }
+
+      if (underline) {
+        out += "</u>"
+        underline = false
+      }
+
       i += 3
       continue
     }
@@ -88,6 +99,13 @@ function formatPatchouli(text, entries) {
 
       out += `<a href="${url}" class="wiki-link">`
       i = end + 1
+      continue
+    }
+
+    if (text.startsWith("$(n)", i)) {
+      underline = true
+      out += "<u>"
+      i += 4
       continue
     }
 

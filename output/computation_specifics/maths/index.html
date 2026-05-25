@@ -36,7 +36,7 @@
 
           <img class="glyph-icon" src="/assets/glyphs/minus.png">
 
-          <p>$(n)num|vec</strong> → $(n)num|vec</strong><br>Returns the additive inverse of the head, equivalent to multiplying by -1. <br><br>For vectors, this operation is applied to each component (as per multiplication by -1).</p>
+          <p><u>num|vec</u> → <u>num|vec</u><br>Returns the additive inverse of the head, equivalent to multiplying by -1. <br><br>For vectors, this operation is applied to each component (as per multiplication by -1).</p>
 
         </div>
       
@@ -47,7 +47,7 @@
 
           <img class="glyph-icon" src="/assets/glyphs/add.png">
 
-          <p>$(n)num|vec, num|vec</strong> → $(n)num|vec</strong><br>Pops two number or vector species, adds them, and pushes the result. Behaviour changes depending on popped species.</p>
+          <p><u>num|vec, num|vec</u> → <u>num|vec</u><br>Pops two number or vector species, adds them, and pushes the result. Behaviour changes depending on popped species.</p>
 
         </div>
       
@@ -59,7 +59,7 @@
 
           <img class="glyph-icon" src="/assets/glyphs/sub.png">
 
-          <p>$(n)num|vec, num|vec</strong> → $(n)num|vec</strong><br>Subtracts the species at the head from the species below it. Behaviour changes depending on popped species.</p>
+          <p><u>num|vec, num|vec</u> → <u>num|vec</u><br>Subtracts the species at the head from the species below it. Behaviour changes depending on popped species.</p>
 
         </div>
       
@@ -71,7 +71,7 @@
 
           <img class="glyph-icon" src="/assets/glyphs/mult.png">
 
-          <p>$(n)num|vec, num|vec</strong> → $(n)num|vec</strong><br>Multiplies the top two species. Behaviour changes depending on popped species.</p>
+          <p><u>num|vec, num|vec</u> → <u>num|vec</u><br>Multiplies the top two species. Behaviour changes depending on popped species.</p>
 
         </div>
       
@@ -83,7 +83,7 @@
 
           <img class="glyph-icon" src="/assets/glyphs/div.png">
 
-          <p>$(n)num|vec, num|vec</strong> → $(n)num|vec</strong><br>Divides the species below the head by the species at the head. Behaviour changes depending on popped species. Do not divide by 0.</p>
+          <p><u>num|vec, num|vec</u> → <u>num|vec</u><br>Divides the species below the head by the species at the head. Behaviour changes depending on popped species. Do not divide by 0.</p>
 
         </div>
       
@@ -95,11 +95,11 @@
 
           <img class="glyph-icon" src="/assets/glyphs/clamp.png">
 
-          <p>$(n)num, num, num</strong> → $(n)num</strong><br>Uses the head and the number below it to adjust the number at the third place on the capsum.</p>
+          <p><u>num, num, num</u> → <u>num</u><br>Uses the head and the number below it to adjust the number at the third place on the capsum.</p>
 
         </div>
       
-<p>Consider the case $(o)x</strong>, $(o)a</strong>, $(o)b</strong>:<br><br>$(li)If $(o)x</strong> is within [$(o)a</strong>, $(o)b</strong>], then the glyph returns $(o)x</strong>.<br><br>$(li)If $(o)x</strong> < $(o)a</strong>, returns $(o)a</strong>.<br><br>$(li)If $(o)x</strong> > $(o)b</strong>, returns $(o)b</strong>.</p>
+<p>Consider the case $(o)x, $(o)a, $(o)b:<br><br>$(li)If $(o)x is within [$(o)a, $(o)b], then the glyph returns $(o)x.<br><br>$(li)If $(o)x < $(o)a, returns $(o)a.<br><br>$(li)If $(o)x > $(o)b, returns $(o)b.</p>
 
         <div class="glyph-spotlight">
 
@@ -107,11 +107,11 @@
 
           <img class="glyph-icon" src="/assets/glyphs/lerp.png">
 
-          <p>$(n)num|vec, num|vec, num|vec</strong><br> → $(n)num|vec</strong><br>Moves from the third value to the second value by the amount specified by the head.<br><br>Standard equation:<br>$(o)a</strong>, $(o)b</strong>, $(o)t</strong> → $(o)a</strong> + $(o)t</strong> x ($(o)b</strong> - $(o)a</strong>)</p>
+          <p><u>num|vec, num|vec, num|vec</u><br> → <u>num|vec</u><br>Moves from the third value to the second value by the amount specified by the head.<br><br>Standard equation:<br>$(o)a, $(o)b, $(o)t → $(o)a + $(o)t x ($(o)b - $(o)a)</p>
 
         </div>
       
-<p>$(li)For numbers, apply the standard equation.<br><br>$(li)For cases where $(o)a</strong> & $(o)b</strong> are vectors, applies the standard equation using vector operations.<br><br>$(li)For all vectors, applies the standard equation per axis (on a1, b1 and t1, so on and so forth), returning the resulting vector.</p>
+<p>$(li)For numbers, apply the standard equation.<br><br>$(li)For cases where $(o)a & $(o)b are vectors, applies the standard equation using vector operations.<br><br>$(li)For all vectors, applies the standard equation per axis (on a1, b1 and t1, so on and so forth), returning the resulting vector.</p>
 
         <div class="glyph-spotlight">
 
@@ -119,7 +119,7 @@
 
           <img class="glyph-icon" src="/assets/glyphs/modulo.png">
 
-          <p>$(n)num|vec, num</strong> → $(n)num|vec</strong><br>Takes the modulus of the species below the head with respect to the head (the remainder from division).<br><br>If the number below the head is a vector, the modulus of each component with respect to the number is taken.</p>
+          <p><u>num|vec, num</u> → <u>num|vec</u><br>Takes the modulus of the species below the head with respect to the head (the remainder from division).<br><br>If the number below the head is a vector, the modulus of each component with respect to the number is taken.</p>
 
         </div>
       
@@ -130,7 +130,7 @@
 
           <img class="glyph-icon" src="/assets/glyphs/exp.png">
 
-          <p>$(n)num, num</strong> → $(n)num</strong><br>Exponentiates the number below the head by the head. <br><br>eg. $(o)a</strong>, $(o)b</strong> → $(o)a</strong>^$(o)b</strong></p>
+          <p><u>num, num</u> → <u>num</u><br>Exponentiates the number below the head by the head. <br><br>eg. $(o)a, $(o)b → $(o)a^$(o)b</p>
 
         </div>
       
@@ -141,7 +141,7 @@
 
           <img class="glyph-icon" src="/assets/glyphs/floor.png">
 
-          <p>$(n)num</strong> → $(n)num</strong><br>Pops a number, rounds it down if possible, and pushes the result onto the capsum.</p>
+          <p><u>num</u> → <u>num</u><br>Pops a number, rounds it down if possible, and pushes the result onto the capsum.</p>
 
         </div>
       
@@ -152,7 +152,7 @@
 
           <img class="glyph-icon" src="/assets/glyphs/ceil.png">
 
-          <p>$(n)num</strong> → $(n)num</strong><br>Pops a number, rounds it up if possible, and pushes the result onto the capsum.</p>
+          <p><u>num</u> → <u>num</u><br>Pops a number, rounds it up if possible, and pushes the result onto the capsum.</p>
 
         </div>
       
@@ -163,7 +163,7 @@
 
           <img class="glyph-icon" src="/assets/glyphs/round.png">
 
-          <p>$(n)num</strong> → $(n)num</strong><br>Pops a number, rounds it according to the standard method, and pushes the result onto the capsum.</p>
+          <p><u>num</u> → <u>num</u><br>Pops a number, rounds it according to the standard method, and pushes the result onto the capsum.</p>
 
         </div>
       
@@ -174,7 +174,7 @@
 
           <img class="glyph-icon" src="/assets/glyphs/abs.png">
 
-          <p>$(n)num|vec</strong> → $(n)num|vec</strong><br>Pops the top species and returns the absolute value.<br><br>For vectors, the glyph takes the absolute value of each component and returns the resulting vector.</p>
+          <p><u>num|vec</u> → <u>num|vec</u><br>Pops the top species and returns the absolute value.<br><br>For vectors, the glyph takes the absolute value of each component and returns the resulting vector.</p>
 
         </div>
       
@@ -185,7 +185,7 @@
 
           <img class="glyph-icon" src="/assets/glyphs/sign.png">
 
-          <p>$(n)num</strong> → $(n)num</strong><br>Pops a number, and pushes onto the capsum either -1, 0 or 1 depending on whether the popped number was negative, zero or positive.</p>
+          <p><u>num</u> → <u>num</u><br>Pops a number, and pushes onto the capsum either -1, 0 or 1 depending on whether the popped number was negative, zero or positive.</p>
 
         </div>
       
@@ -196,7 +196,7 @@
 
           <img class="glyph-icon" src="/assets/glyphs/min.png">
 
-          <p>$(n)num, num</strong> → $(n)num</strong><br>Pops two numbers and pushes only the smallest of the two onto the capsum.</p>
+          <p><u>num, num</u> → <u>num</u><br>Pops two numbers and pushes only the smallest of the two onto the capsum.</p>
 
         </div>
       
@@ -207,7 +207,7 @@
 
           <img class="glyph-icon" src="/assets/glyphs/max.png">
 
-          <p>$(n)num, num</strong> → $(n)num</strong><br>Pops two numbers and pushes only the largest of the two onto the capsum.</p>
+          <p><u>num, num</u> → <u>num</u><br>Pops two numbers and pushes only the largest of the two onto the capsum.</p>
 
         </div>
       
