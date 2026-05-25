@@ -128,7 +128,10 @@ function resolveGlyph(glyph) {
   const fallback = `https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.1/assets/minecraft/textures/item/${name}.png`
 
   return `
-    ${local}
+    <img class="glyph-icon"
+      src="${local}"
+      onerror="this.onerror=null;this.src='${fallback}'"
+    >
   `
 }
 
@@ -263,10 +266,7 @@ function renderEntry(entry, entries, currentKey) {
 
           <h2>${formatGlyphTitle(p.title)}</h2>
 
-          <img class="glyph-icon"
-            src="/assets/glyphs/${glyphName}.png"
-            onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.1/assets/minecraft/textures/item/${glyphName}.png'"
-          >
+          ${resolveGlyph(p.glyph)}
 
           <p>${formatPatchouli(p.text, entries)}</p>
 
