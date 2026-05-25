@@ -106,6 +106,19 @@ function toKey(relative) {
   return relative.replace(".json", "").replace(/\\/g, "/")
 }
 
+// ---- FORMAT CATEGORIES ----
+function formatCategory(cat) {
+  if (!cat) return "Unknown"
+
+  // split namespace + id
+  const parts = cat.split(":")
+  const name = parts[1] || cat
+
+  return "On " + name
+    .replace(/_/g, " ")
+    .replace(/\b\w/g, c => c.toUpperCase())
+}
+
 // ---- SIDEBAR ----
 function buildSidebar(entries, currentKey) {
   const grouped = {}
@@ -118,7 +131,7 @@ function buildSidebar(entries, currentKey) {
   let html = ""
 
   for (const cat in grouped) {
-    html += `<h4>${cat}</h4>`
+    html += `<h4>${formatCategory(cat)}</h4>`
 
     for (const e of grouped[cat]) {
       const active = e.key === currentKey ? "active" : ""
@@ -217,7 +230,7 @@ function generateIndex(entries) {
     `
 
     for (const e of grouped[cat]) {
-      html += `<a href="${e.url}">${e.name}</a>`
+      html += `<div class="category-title">${formatCategory(cat)}</div>`
     }
 
     html += `</div>`
