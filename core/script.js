@@ -122,12 +122,14 @@ function resolveGlyph(glyph) {
 
   const [ns, name] = glyph.split(":")
 
-  // only your mod glyphs
-  if (ns === "lingua_mundi") {
-    return `/assets/glyphs/${name}.png`
-  }
+  if (ns !== "lingua_mundi") return ""
 
-  return ""
+  const local = `/assets/glyphs/${name}.png`
+  const fallback = `https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.1/assets/minecraft/textures/item/${name}.png`
+
+  return `
+    ${local}
+  `
 }
 
 /// ---- GLYPH TITLE RESOLVER ----
@@ -151,16 +153,21 @@ function resolveMinecraftFallback(name) {
   return `https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.1/assets/minecraft/textures/item/${name}.png`
 }
 
+
+// ---- ICON RESOLVER ----
 function renderIcon(icon) {
   if (!icon) return ""
 
   const [ns, name] = icon.split(":")
 
   if (ns === "minecraft") {
+    const local = `/assets/minecraft/${name}.png`
+    const fallback = `https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.1/assets/minecraft/textures/item/${name}.png`
+
     return `
       <img class="icon"
-        src="/assets/minecraft/${name}.png"
-        onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.1/assets/minecraft/textures/item/${name}.png'"
+        src="${local}"
+        onerror="this.onerror=null;this.src='${fallback}'"
       >
     `
   }
@@ -169,25 +176,6 @@ function renderIcon(icon) {
     return `<img class="icon" src="/assets/lingua_mundi/${name}.png">`
   }
 
-  return ""
-}
-
-// ---- ICON RESOLVER ----
-function resolveIcon(icon) {
-  if (!icon) return ""
-
-  const [ns, name] = icon.split(":")
-
-  if (ns === "lingua_mundi") {
-    return `/assets/lingua_mundi/${name}.png`
-  }
-
-  if (ns === "minecraft") {
-    const local = `/assets/minecraft/${name}.png`
-    const fallback = `https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.1/assets/minecraft/textures/item/${name}.png`
-
-    return `${local}`
-  }
   return ""
 }
 
@@ -268,12 +256,17 @@ function renderEntry(entry, entries, currentKey) {
     }
 
     if (p.type === "lingua_mundi:glyph_spotlight") {
+      const glyphName = p.glyph?.split(":")?.[1] || "missingno"
+
       return `
         <div class="glyph-spotlight">
 
           <h2>${formatGlyphTitle(p.title)}</h2>
 
-          <img class="glyph-icon" src="${resolveGlyph(p.glyph)}">
+          <img class="glyph-icon"
+            src="/assets/glyphs/${glyphName}.png"
+            onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.1/assets/minecraft/textures/item/${glyphName}.png'"
+          >
 
           <p>${formatPatchouli(p.text, entries)}</p>
 
