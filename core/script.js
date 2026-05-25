@@ -122,17 +122,12 @@ function resolveGlyph(glyph) {
 
   const [ns, name] = glyph.split(":")
 
-  if (ns !== "lingua_mundi") return ""
+  // only your mod glyphs
+  if (ns === "lingua_mundi") {
+    return `/assets/glyphs/${name}.png`
+  }
 
-  const local = `/assets/glyphs/${name}.png`
-  const fallback = `https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.1/assets/minecraft/textures/item/${name}.png`
-
-  return `
-    <img class="glyph-icon"
-      src="${local}"
-      onerror="this.onerror=null;this.src='${fallback}'"
-    >
-  `
+  return ""
 }
 
 /// ---- GLYPH TITLE RESOLVER ----
@@ -147,36 +142,18 @@ function formatGlyphTitle(title) {
     .replace(/\b\w/g, c => c.toUpperCase())
 }
 
-// ---- EXTRA ICON STUFF... ----
-function resolveMinecraftItem(name) {
-  return `/assets/minecraft/items/${name}.png`
-}
-
-function resolveMinecraftFallback(name) {
-  return `https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.1/assets/minecraft/textures/item/${name}.png`
-}
-
-
 // ---- ICON RESOLVER ----
-function renderIcon(icon) {
+function resolveIcon(icon) {
   if (!icon) return ""
 
   const [ns, name] = icon.split(":")
 
-  if (ns === "minecraft") {
-    const local = `/assets/minecraft/${name}.png`
-    const fallback = `https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.1/assets/minecraft/textures/item/${name}.png`
-
-    return `
-      <img class="icon"
-        src="${local}"
-        onerror="this.onerror=null;this.src='${fallback}'"
-      >
-    `
+  if (ns === "lingua_mundi") {
+    return `/assets/lingua_mundi/${name}.png`
   }
 
-  if (ns === "lingua_mundi") {
-    return `<img class="icon" src="/assets/lingua_mundi/${name}.png">`
+  if (ns === "minecraft") {
+    return `https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.21.1/assets/minecraft/textures/item/${name}.png`
   }
 
   return ""
@@ -248,7 +225,7 @@ function renderEntry(entry, entries, currentKey) {
   <div class="content">
 
     <h1>
-      <img class="icon" src="${renderIcon(entry.icon)}">
+      <img class="icon" src="${resolveIcon(entry.icon)}">
       ${entry.name}
     </h1>
 
@@ -259,14 +236,12 @@ function renderEntry(entry, entries, currentKey) {
     }
 
     if (p.type === "lingua_mundi:glyph_spotlight") {
-      const glyphName = p.glyph?.split(":")?.[1] || "missingno"
-
       return `
         <div class="glyph-spotlight">
 
           <h2>${formatGlyphTitle(p.title)}</h2>
 
-          ${resolveGlyph(p.glyph)}
+          <img class="glyph-icon" src="${resolveGlyph(p.glyph)}">
 
           <p>${formatPatchouli(p.text, entries)}</p>
 
